@@ -1,0 +1,121 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{egwquotes}[2025/01/14 EGW Quotes Package]
+
+\usepackage{soul}
+
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+
+% Define the color for EGW quotes
+\definecolor{egwcolor}{HTML}{631224}
+\definecolor{others}{HTML}{30235e}
+\definecolor{biblecolor}{HTML}{1974a3}
+
+% Define the main command with one mandatory and two optional arguments
+\NewDocumentCommand{\egw}{m o o}{%
+    \noindent%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{egwcolor}\textit{"#1"}}%
+    % Second argument (optional) - the reference in smaller font with visible braces
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the reference a hyperlink
+        \IfValueTF{#3}{%
+            % With URL: reference is a hyperlink with smaller font and visible braces
+            { \footnotesize\{{\href{#3}{EGW; #2}}\}}%
+        }{%
+            % Without URL: just the reference in smaller font with visible braces
+            { \footnotesize\{{EGW; #2}\}}%
+        }%
+    }%
+}
+
+% New command with footnote reference
+\NewDocumentCommand{\egwinline}{m o o}{%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{egwcolor}\textit{"#1"}}%
+    % Second argument (optional) - the reference as footnote
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the footnote reference a hyperlink
+        \IfValueTF{#3}{%
+            \footnote{\href{#3}{EGW; #2}}%
+        }{%
+            \footnote{EGW; #2}%
+        }%
+    }%
+}
+
+% New command 
+\NewDocumentCommand{\egwnogap}{m o o}{%
+    \vspace{-\parskip}% Remove the extra vertical space
+    \egw{#1}[#2][#3]
+}
+
+% New command with footnote reference
+\NewDocumentCommand{\others}{m o o}{%
+    \noindent%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{others}\textit{"#1"}}%
+    % Second argument (optional) - the reference as footnote
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the footnote reference a hyperlink
+        \IfValueTF{#3}{%
+            \footnote{\href{#3}{#2}}%
+        }{%
+            \footnote{#2}%
+        }%
+    }%
+}
+
+% New command with footnote reference
+\NewDocumentCommand{\othersQuote}{m o o}{%
+    \noindent%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{others}\textit{"#1"}}%
+    % Second argument (optional) - the reference as footnote
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the footnote reference a hyperlink
+        \IfValueTF{#3}{%
+            % With URL: reference is a hyperlink with smaller font and visible braces
+            { \footnotesize\{{\href{#3}{#2}}\}}%
+        }{%
+            % Without URL: just the reference in smaller font with visible braces
+            { \footnotesize\{{#2}\}}%
+        }%
+    }%
+}
+\NewDocumentCommand{\othersnogap}{m o o}{
+    \vspace{-\parskip}% Remove the extra vertical space
+    \others{#1}[#2][#3]
+}
+
+\NewDocumentCommand{\othersQuoteNoGap}{m o o}{
+    \vspace{-\parskip}% Remove the extra vertical space
+    \othersQuote{#1}[#2][#3]
+}
+
+
+% New command for Bible
+\NewDocumentCommand{\bible}{m o}{
+    \noindent%
+    % First argument (mandatory) - the quote text in biblecolor and italic with quotes
+    {\color{biblecolor}\textit{"#1"}}%
+    \IfValueT{#2}{%
+        { \footnotesize{(#2)}}%
+    }%
+}
+
+\NewDocumentCommand{\bibleref}{m}{
+    \footnotesize{(#1)}
+}
+
+\NewDocumentCommand{\normaltext}{m}{%
+    {\normalcolor\textnormal{#1}}%
+}
+
+\newcommand{\emcap}[1]{\textls[-10]{\textsc{#1}}}
+
+\newcommand{\leftsubsection}[1]{%
+  \vspace{-1em} % Reduce the space before
+  \subsubsection*{\raggedright #1}%
+  \vspace{-1em} % Reduce the space after
+}

@@ -1,0 +1,122 @@
+\pagestyle{empty}
+
+% Cover
+\begin{center}
+\begin{tikzpicture}[remember picture,overlay]
+
+    % Golden ratio
+    %\pgfmathsetmacro{\goldenheight}{\paperwidth / \goldenratio}
+    %\pgfmathsetmacro{\goldenwidth}{\paperwidth}
+
+    % Black background
+    \fill[black] (current page.south west) rectangle (current page.north east);
+
+    % Author
+    \node[white, font=\Huge, anchor=north, text width =\linewidth, align = center] (author) at ([yshift=-44pt] current page.north) {\textcolor{customgold}{\scshape\large\authorname}};
+
+    % Title
+    \node[white, font=\Large, anchor=north, text width =0.9\linewidth, align = center, below=4pt of author.south] (title) {\scshape\Huge\booktitle};
+
+    % Subtitle
+    \ifx\subtitle\undefined\else\if\relax\detokenize\expandafter{\subtitle}\relax\else
+    {\node[white, font=\Large, text width =\linewidth, align = center, anchor=north, below=8pt of title.south] {\textcolor{lightgray}{\scshape\large\subtitle}};}
+    \fi\fi
+
+    % Central circle pattern
+    \begin{scope}[shift={(current page.center)}, scale=1.0871]
+        \foreach \x in {-20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18} {
+            \foreach \y in {-2, 2} {
+                \begin{scope}[shift={(\x + 1, \y)}]
+                    \foreach \r in {0.2, 0.4, 0.6, 0.8, 1.0} {
+                        \draw[thick, darkgray] (0,0) circle (\r);
+                    }
+                \end{scope}
+            }
+            \foreach \y in {-3, -1, 1, 3} {
+                \begin{scope}[shift={(\x, \y)}]
+                    \foreach \r in {0.2, 0.4} {
+                        \draw[thick, darkgray] (0,0) circle (\r);
+                    }
+                \end{scope}
+            }
+            \foreach \y in {-1, 1} {
+                \begin{scope}[shift={(\x, 0)}]
+                    \foreach \r in {0.2, 0.4, 0.6, 0.8, 1.0} {
+                        \draw[thick, customgold] (0,0) circle (\r);
+                        \fill[thick, customgold] (0,0) circle (\r);
+                    }
+                \end{scope}
+            }
+            \foreach \y in {-1, 1} {
+                \begin{scope}[shift={(\x, \y)}]
+                    \foreach \r in {0.2, 0.4, 0.6, 0.8, 1.0} {
+                        \fill[black] (0,0) circle (\r);
+                    }
+                \end{scope}
+            }
+            \foreach \y in {-1, 1} {
+                \begin{scope}[shift={(\x, \y)}]
+                    \foreach \r in {0.2, 0.4, 0.6, 0.8, 1.0} {
+                        \draw[thick, darkgray] (0,0) circle (\r);
+                    }
+                \end{scope}
+            }
+        }
+    \end{scope}
+
+    % Publisher
+    \node[white, font=\Huge, anchor=south] (publisher) at ([yshift=32pt] current page.south) {\textcolor{gray}{\scshape\large\website}};
+
+    % Publisher logo
+    \node[anchor=north, above=4pt of publisher.north] {\includegraphics[width=0.21\textwidth]{frontmatter/logo-white.png}};
+
+    % Other information
+    \ifx\translatorname\undefined
+    \else
+        \if\relax\detokenize\expandafter{\translatorname}\relax
+        \else{   
+            \node[white, font=\Large, anchor=north, above=114pt of publisher.north] (translatedBy) {\textcolor{gray}{\itshape\large{Translation by}}};
+            
+            \node[white, font=\Large, anchor=south, below=2pt of translatedBy.south] (translatorAuthor) {\textcolor{lightgray}{\itshape\large\translatorname}};       
+            }
+        \fi
+    \fi        
+\end{tikzpicture}
+\end{center}
+
+\cleardoublepage
+
+% Title page (back cover)
+\begin{titlepage}
+	\centering
+	\newgeometry{top=1in,bottom=1in,right=0in,left=0in}
+    \thispagestyle{empty}
+	~	
+    % Author
+	\vspace{24pt}
+	{\scshape\large \authorname\par}
+
+    % Title
+	\vspace{6pt}
+	{\scshape\Huge \booktitle\par}
+
+    % Subtitle
+    \ifx\subtitle\undefined\else\if\relax\detokenize\expandafter{\subtitle}\relax\else
+    {\vspace{6pt}
+	{\scshape\large \subtitle\par}
+ 
+	\vspace{\stretch{1.25}}}
+    \fi\fi
+    
+    % Who did the translation
+    \ifx\translatorname\undefined\else\if\relax\detokenize\expandafter{\translatorname}\relax\else
+    {{\itshape\large{Translation by}\par}
+	\vspace{6pt}
+
+    {\itshape\Large\translatorname\par}}
+    \fi\fi
+
+    % Publisher
+    \vspace{\stretch{6}}
+	{\Huge\scshape\large\website\par}
+\end{titlepage}

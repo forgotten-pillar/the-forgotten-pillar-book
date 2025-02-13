@@ -1,0 +1,85 @@
+% Forgotten Pillar booktemplate by Michael Presecan
+% 2025 (c) Michael Presecan
+% See more <forgottenpillar.com> or <github.com/forgotten-pillar>
+
+% paper size is in preamble.sty
+\documentclass[12pt,openany]{book} 
+
+% Defining the golden ratio
+\newcommand{\goldenratio}{1.618}
+
+% Input and output encoding
+\usepackage[T1]{fontenc}
+
+% Book information
+\newcommand{\authorname}{Michael Presečan \& Marjan Gerguri}
+% \newcommand{\translatorname}{Vitória Régia}
+\newcommand{\booktitle}{The Forgotten Pillar}
+\newcommand{\subtitle}{Rediscovering Adventist Identity}
+\newcommand{\publisher}{Fortbit d.o.o.}
+\newcommand{\website}{forgottenpillar.com}
+\newcommand{\editionyear}{2025}
+\newcommand{\isbn}{--------------}
+\title{\booktitle}
+\author{\authorname}
+
+% layout
+\usepackage{layout/book-print}
+
+% Additional packages
+\usepackage{misc/options}
+\usepackage{misc/forgottenpillar}
+
+\begin{document}
+
+% Front matter
+\frontmatter
+\input{frontmatter/titlepage}      % Title page
+\input{frontmatter/copyrightpage}  % Copyright page
+\input{frontmatter/preface}        % Preface
+\input{frontmatter/tocpage}        % Table of contents
+
+% Main matter
+\mainmatter
+\pagestyle{fancy}                  % Fancy page style for main content
+
+% Chapter content
+\input{content/introduction}       % Chatper 0
+\input{content/chapter1}           % Chapter 1
+\input{content/chapter2}           % Chapter 2
+\input{content/chapter3}           % Chapter 3
+\input{content/chapter4}           % Chapter 4
+\input{content/chapter5}           % Chapter 5
+\input{content/chapter6}           % Chapter 6
+\input{content/chapter7}           % Chapter 7
+\input{content/chapter8}           % Chapter 8
+\input{content/chapter9}           % Chapter 9
+\input{content/chapter10}          % Chapter 10
+\input{content/chapter11}          % Chapter 11
+\input{content/chapter12}          % Chapter 12
+\input{content/chapter13}          % Chapter 13
+\input{content/chapter14}          % Chapter 14
+\input{content/chapter15}          % Chapter 15
+\input{content/chapter16}          % Chapter 16
+\input{content/chapter17}          % Chapter 17
+\input{content/chapter18}          % Chapter 18
+\input{content/chapter19}          % Chapter 19
+\input{content/chapter20}          % Chapter 20
+\input{content/chapter21}          % Chapter 21
+\input{content/chapter22}          % Chapter 22
+\input{content/chapter23}          % Chapter 23
+\input{content/chapter24}          % Chapter 24
+\input{content/chapter25}          % Chapter 25
+\input{content/chapter26}          % Chapter 26
+\input{content/chapter27}          % Chapter 27
+\input{content/chapter28}          % Chapter 28
+\input{content/chapter29}          % Chapter 29
+\input{content/chapter30}          % Chapter 30
+
+\input{content/appendix}           % Appendix
+
+% Back matter
+\backmatter
+\input{frontmatter/backpage}       % Back page (back cover)
+
+\end{document}
