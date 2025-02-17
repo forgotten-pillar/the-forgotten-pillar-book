@@ -77,18 +77,11 @@ def split_into_paragraphs(content):
     paragraphs = re.split(r'\n\s*\n', content)
     return [p.strip() for p in paragraphs if p.strip()]
 
-def is_latex_command(paragraph):
-    command_patterns = [
-        r'\\[a-zA-Z]+{.*}',  # commands with braces
-        r'\\begin{.*}',      # environment begin
-        r'\\end{.*}',        # environment end
-        r'\\[a-zA-Z]+\[.*\]' # commands with optional arguments
-    ]
-    paragraph = paragraph.strip()
-    for pattern in command_patterns:
-        if re.match(f'^({pattern})$', paragraph):
-            return True
-    return False
+def is_structural_latex_command(paragraph):
+    # Only treat as non-translatable if the paragraph is solely a structural command.
+    structural_commands = ["\\begin", "\\end"]
+    stripped = paragraph.strip()
+    return any(stripped.startswith(cmd) for cmd in structural_commands)
 
 def translate_paragraph_batch(client, paragraphs, suggestions, target_lang, system_message):
     delimiter = "===SPLIT==="
@@ -152,7 +145,7 @@ def process_latex_file(input_file, output_dir, suggestion_file, client):
     for paragraph in paragraphs:
         if not paragraph.strip():
             continue
-        if is_latex_command(paragraph):
+        if is_structural_latex_command(paragraph):
             flush_batch()
             translated_content.append(paragraph)
         else:
