@@ -54,7 +54,7 @@ Key rules to follow:
    - For every Bible verse encountered, use the user-defined Bible translation (for instance, for {language}, use "{bible_verse_translation}").
 
 4. **User Suggestions:**
-    - The user suggestions are translations of the text, but they may be based on an older version of the text. Whenever it is possible always prefer user suggestions in translation (if there is grammar mistakes, fix it), adhering to keeping LaTeX commands in place as in Original English text [especially \\textbf \\textit \\underline \\emcap \\footnote \\egw-like \\others-like (\\others \\othersnogap \\othersQuote \\othersQuoteNoGap) \\normalText \\bible-like commands needs to be mapped correctly]. If there are discrepancies in meaning (since english text got some improvements), then prefer to make a new translation based English source.
+    - The user suggestions are translations of the text, but they may be based on an older version of the text. Whenever it is possible always prefer user suggestions in translation (if there is grammar mistakes, fix it), adhering to keeping LaTeX commands in place as in Original English text [especially \\textbf{{}} \\textit{{}} \\underline{{}} \\emcap{{}} \\footnote{{}} \\egw{{}}[][] \\egwnogap{{}}[][] \\egwinline{{}}[][] \\others{{}}[][] \\othersnogap{{}}[][] \\othersQuote{{}}[][] \\othersQuoteNoGap{{}}[][] \\normalText{{}}[][] \\bible{{}}[] \\*{{itemize}} commands needs to be mapped correctly]. If there are discrepancies in meaning (since english text got some improvements), then prefer to make a new translation based English source.
     - The user suggestions may cover more content than the given paragraphs to translate. Please recognize which suggestions you are taking.
     - The user suggestions do not have footnotes nor any formating. Please follow the original English text and construct footnotes and formatting as needed using LaTeX commands seen in the source. Again, footnotes, needs to be translated properly to {language} language.
 
@@ -79,7 +79,7 @@ def split_into_paragraphs(content):
 
 def is_structural_latex_command(paragraph):
     # Only treat as non-translatable if the paragraph is solely a structural command.
-    structural_commands = ["\\begin", "\\end"]
+    structural_commands = []
     stripped = paragraph.strip()
     return any(stripped.startswith(cmd) for cmd in structural_commands)
 

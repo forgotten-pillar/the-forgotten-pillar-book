@@ -42,7 +42,7 @@ Your output must be only the translated text—do not include any extra meta inf
 
 Key rules to follow:
 1. **Preservation of LaTeX and Mathematics:**
-   - ALWAYS, preserve all LaTeX commands and any mathematics unchanged. All LaTeX commands present in the source English text should also appear correspondingly in {language}.
+   - ALWAYS, preserve all LaTeX commands and any mathematics unchanged. All LaTeX commands present in the source English text should also appear correspondingly in {language}. All LaTeX commands, including \\textbf{{}} \\textit{{}} \\underline{{}} \\emcap{{}} \\footnote{{}} \\egw{{}}[][] \\egwnogap{{}}[][] \\egwinline{{}}[][] \\others{{}}[][] \\othersnogap{{}}[][] \\othersQuote{{}}[][] \\othersQuoteNoGap{{}}[][] \\normalText{{}}[][] \\bible{{}}[] should be preserved fully, and if optional text in [] is translatable, translate it too.
    - Be very careful about the scope of commands delimited by curly brackets. Every command that starts with a curly bracket must finish with a corresponding one.
    - Commands like `\\egw` refer to Ellen G. White; when such commands appear, translate the surrounding text with feminine grammatical forms if required. Commands like `\\others` should be translated with male grammatical forms if not otherwise indicated.
 
@@ -74,7 +74,7 @@ def split_into_paragraphs(content):
 
 def is_structural_latex_command(paragraph):
     # Only treat as non-translatable if the paragraph is solely a structural command.
-    structural_commands = ["\\begin", "\\end"]
+    structural_commands = []
     stripped = paragraph.strip()
     return any(stripped.startswith(cmd) for cmd in structural_commands)
 
