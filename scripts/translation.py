@@ -102,7 +102,7 @@ Key rules to follow:
 {mapping_text}
 
 3. **Bible Verse Translations:**
-   - For every Bible verse encountered, use the user-defined Bible translation (for instance, for {language}, use "{bible_verse_translation}").
+   - For every Bible verse encountered, use "{bible_verse_translation}" Bible translation.
 
 4. **Additional Instructions:**
 - single quotes arround words should be ’ and ‘, while if standing alone should be '.
