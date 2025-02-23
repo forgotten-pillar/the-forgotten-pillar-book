@@ -16,5 +16,4 @@
 \contentsline {chapter}{\numberline {XV}Dr. Kellogg i doktrina o Trojstvu}{114}{chapter.15}%
 \contentsline {chapter}{\numberline {XVI}Dr. Kellogg i panteizam}{127}{chapter.16}%
 \contentsline {chapter}{\numberline {XVII}Odgovor na Kellogove trinitarijanske sentimente}{133}{chapter.17}%
-\contentsline {chapter}{\numberline {XVIII}Dr. Kellogg and Ellen White writings}{137}{chapter.18}%
-\contentsline {chapter}{\numberline {XIX}Dr. Kellogg i spisi Ellen White}{138}{chapter.19}%
+\contentsline {chapter}{\numberline {XVIII}Dr. Kellogg i spisi Ellen White}{137}{chapter.18}%
