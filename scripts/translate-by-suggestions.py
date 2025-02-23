@@ -13,6 +13,57 @@ load_dotenv()
 # Utility functions
 # ----------------------------
 
+def is_considered_letter(c: str) -> bool:
+    """
+    Returns True if c is an alphabetic character (using Unicode)
+    for our purposes. For our logic, we want to treat the LaTeX 
+    brace characters '{' and '}' as nonalphabetic.
+    """
+    if c in "{}":
+        return False
+    return c.isalpha()
+
+def fix_quotation_makrs(text: str) -> str:
+    """
+    Check fix-quotations.py 'modify_text' for the original function.
+    """
+    result = []
+    for i, ch in enumerate(text):
+        if ch in "\"'":
+            prev = text[i-1] if i > 0 else None
+            nxt = text[i+1] if i < len(text)-1 else None
+
+            if ch == "'":
+                # If it's an apostrophe in a contraction, leave it unchanged.
+                if prev is not None and nxt is not None and is_considered_letter(prev) and is_considered_letter(nxt):
+                    result.append("'")
+                    continue
+
+            # Determine opening vs. closing:
+            # If previous character is missing or nonalphabetic, assume opening.
+            if prev is None or prev.isspace() or (not prev.isalpha() and prev not in '{}' and prev not in '.,?!:;') or prev == '{':
+                if ch == '"':
+                    result.append('“')
+                else:
+                    result.append('‘')
+            # Otherwise, if next character is missing or nonalphabetic, assume closing.
+            elif nxt is None or nxt.isspace() or not is_considered_letter(nxt):
+                if ch == '"':
+                    result.append('”')
+                else:
+                    result.append('’')
+            # Otherwise, if both previous and next characters are alphabetic, then close quotations, this is because how is_considered_letter made with {} brackets.
+            elif is_considered_letter(prev) and is_considered_letter(nxt):
+                if ch == '"':
+                    result.append('”')
+                if ch == '\'':
+                    result.append('’')
+            else:
+                result.append(ch)
+        else:
+            result.append(ch)
+    return ''.join(result)
+
 def get_config_value(yaml_path, value_name):
     if not yaml_path:
         sys.exit("Error: No YAML configuration file path provided.")
@@ -154,6 +205,8 @@ def process_latex_file(input_file, output_dir, suggestion_file, client):
             if len(batch) == batch_size:
                 flush_batch()
     flush_batch()
+
+    translated_content = [fix_quotation_makrs(p) for p in translated_content]
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n\n'.join(translated_content))
