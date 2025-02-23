@@ -6,10 +6,6 @@ def is_considered_letter(c: str) -> bool:
     for our purposes. For our logic, we want to treat the LaTeX 
     brace characters '{' and '}' as nonalphabetic.
     """
-    # if c == "{":
-    #     return False
-    # if c == "}":
-    #     return True
     if c in "{}":
         return False
     return c.isalpha()
@@ -72,7 +68,7 @@ def modify_text(text: str) -> str:
             if ch == "'":
                 # If it's an apostrophe in a contraction, leave it unchanged.
                 if prev is not None and nxt is not None and is_considered_letter(prev) and is_considered_letter(nxt):
-                    result.append(ch)
+                    result.append("'")
                     continue
 
             # Determine opening vs. closing:
