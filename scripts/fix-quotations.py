@@ -6,13 +6,19 @@ def is_considered_letter(c: str) -> bool:
     for our purposes. For our logic, we want to treat the LaTeX 
     brace characters '{' and '}' as nonalphabetic.
     """
-    if c == "{":
-        return False
-    if c == "}":
-        return True
-    # if c in "{}":
+    # if c == "{":
     #     return False
+    # if c == "}":
+    #     return True
+    if c in "{}":
+        return False
     return c.isalpha()
+
+def is_space(c: str) -> bool:
+    """
+    Returns True if c is a space character (using Unicode).
+    """
+    return c.isspace()
 
 def modify_text(text: str) -> str:
     """
@@ -37,6 +43,25 @@ def modify_text(text: str) -> str:
       - Else if the next character is missing or not "alphabetic", 
         replace with a closing single quote ’.
       - Otherwise, leave it unchanged.
+
+    Example:
+        ```they called “\\textit{fundamental principles}.” But often```
+        ```they called “\\textit{fundamental principles}”, but often```
+        ```they called “\\textit{fundamental principles}” but often```
+        ```they called “fundamental principles.” But often```
+        ```they called “fundamental principles”, but often```
+        ```they called “fundamental principles” but often```
+        ```\\chapter{Revision of “Living Temple”}```
+        ```Revision of “Living Temple”```
+        ```\\textbf{republishing ‘The Living Temple’}…. He```
+        ```\\textbf{republishing ‘The Living Temple,’}…. He```
+        ```\\textbf{republishing ‘The Living Temple’.}…. He```
+        ```republishing ‘\\textbf{The Living Temple}’…. He```
+        ```republishing ‘\\textbf{The Living Temple},’…. He```
+        ```republishing ‘\\textbf{The Living Temple}’. He```
+        ```republishing ‘The Living Temple’. He```
+        ```republishing ‘The Living Temple’ He```
+        ```\\egw{‘The Living Temple’ He}```
     """
     result = []
     for i, ch in enumerate(text):
@@ -52,13 +77,13 @@ def modify_text(text: str) -> str:
 
             # Determine opening vs. closing:
             # If previous character is missing or nonalphabetic, assume opening.
-            if prev is None or not is_considered_letter(prev):
+            if prev is None or is_space(prev) or (not prev.isalpha() and prev not in '{}' and prev not in '.,?!:;') or prev == '{':
                 if ch == '"':
                     result.append('“')
                 else:
                     result.append('‘')
             # Otherwise, if next character is missing or nonalphabetic, assume closing.
-            elif nxt is None or not is_considered_letter(nxt):
+            elif nxt is None or is_space(nxt) or not is_considered_letter(nxt):
                 if ch == '"':
                     result.append('”')
                 else:
