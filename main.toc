@@ -18,3 +18,4 @@
 \contentsline {chapter}{\numberline {XVII}Odgovor na Kellogove trinitarijanske sentimente}{133}{chapter.17}%
 \contentsline {chapter}{\numberline {XVIII}Dr. Kellogg i spisi Ellen White}{137}{chapter.18}%
 \contentsline {chapter}{\numberline {XIX}Prisjećanje početka}{141}{chapter.19}%
+\contentsline {chapter}{\numberline {XX}Suština problema}{148}{chapter.20}%
