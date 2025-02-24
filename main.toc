@@ -19,3 +19,5 @@
 \contentsline {chapter}{\numberline {XVIII}Dr. Kellogg i spisi Ellen White}{137}{chapter.18}%
 \contentsline {chapter}{\numberline {XIX}Prisjećanje početka}{141}{chapter.19}%
 \contentsline {chapter}{\numberline {XX}Suština problema}{148}{chapter.20}%
+\contentsline {chapter}{\numberline {XXI}Veliki otpad uskoro će se ostvariti}{158}{chapter.21}%
+\contentsline {chapter}{\numberline {XXII}Budućnost Fundamentalnih Principa}{163}{chapter.22}%
