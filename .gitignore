@@ -3,5 +3,9 @@
 *.fls
 *.log
 *.pdf
+*.out
+*.synctex.gz
+*.toc
+*.zip
 
 .env

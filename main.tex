@@ -4,8 +4,6 @@
 
 % paper size is in preamble.sty
 \documentclass[12pt,openany]{book} 
-\DeclareUnicodeCharacter{020B}{\^{\i}}
-\DeclareUnicodeCharacter{0203}{\^{a}}
 
 % Defining the golden ratio
 \newcommand{\goldenratio}{1.618}
@@ -15,18 +13,21 @@
 
 % Book information
 \newcommand{\authorname}{Michael Presečan \& Marjan Gerguri}
-% \newcommand{\translatorname}{Vitória Régia}
-\newcommand{\booktitle}{The Forgotten Pillar}
-\newcommand{\subtitle}{Rediscovering Adventist Identity}
-\newcommand{\publisher}{Fortbit d.o.o.}
 \newcommand{\website}{forgottenpillar.com}
 \newcommand{\editionyear}{2025}
-\newcommand{\isbn}{--------------}
+
+\input{lang/en/frontmatter/general}
+
 \title{\booktitle}
 \author{\authorname}
 
 % layout
-\usepackage{latex-setup/layout/us-letter-half}
+\usepackage{latex-setup/layout/book-print}
+% \usepackage{latex-setup/layout/iso-a4}
+% \usepackage{latex-setup/layout/iso-a5}
+% \usepackage{latex-setup/layout/mobile}
+% \usepackage{latex-setup/layout/us-letter-half}
+% \usepackage{latex-setup/layout/us-letter}
 
 % Additional packages
 \usepackage{latex-setup/styles/options}
