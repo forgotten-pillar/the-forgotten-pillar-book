@@ -132,7 +132,7 @@ def is_structural_latex_command(paragraph):
 def translate_paragraph_batch(client, paragraphs, target_lang, system_message):
     delimiter = "===SPLIT==="
     joined_paragraphs = f"\n{delimiter}\n".join(paragraphs)
-    prompt = f"""Translate the following paragraphs to {target_lang}. Preserve all LaTeX commands and mathematics unchanged. Return exactly {len(paragraphs)} translated paragraphs in the same order as the input, separated by the delimiter '{delimiter}'. Do not add any extra commentary or numbering.
+    prompt = f"""Translate the following paragraphs to {target_lang}. Preserve all LaTeX commands and mathematics unchanged. Return exactly {len(paragraphs)} translated paragraphs in the same order as the input, separated by the delimiter '{delimiter}'. The LaTeX directives must be preserved fully in its corresponding translation! Do not add any extra commentary or numbering.
 
 Input paragraphs:
 {joined_paragraphs}
