@@ -105,7 +105,7 @@ Key rules to follow:
    - For every Bible verse encountered, use use "{bible_verse_translation}".
 
 4. **User Suggestions:**
-    - The user suggestions are translations of the text, but they may be based on an older version of the text. Whenever it is possible always prefer user suggestions in translation (if there is grammar mistakes, fix it), adhering to keeping LaTeX commands in place as in Original English text [especially \\textbf{{}} \\textit{{}} \\underline{{}} \\emcap{{}} \\footnote{{}} \\egw{{}}[][] \\egwnogap{{}}[][] \\egwinline{{}}[][] \\others{{}}[][] \\othersnogap{{}}[][] \\othersQuote{{}}[][] \\othersQuoteNoGap{{}}[][] \\normalText{{}}[][] \\bible{{}}[] \\*{{itemize}} commands needs to be mapped correctly]. If there are discrepancies in meaning (since english text got some improvements), then prefer to make a new translation based English source.
+    - The user suggestions are translations of the text, but they may be based on an older version of the text. Whenever it is possible always prefer user suggestions in translation (if there is grammar mistakes, fix it), adhering to keeping LaTeX commands in place as in Original English text [especially \\textbf{{}} \\textit{{}} \\underline{{}} \\emcap{{}} \\footnote{{}} \\egw{{}}[][] \\egwnogap{{}}[][] \\egwinline{{}}[][] \\others{{}}[][] \\othersnogap{{}}[][] \\othersQuote{{}}[][] \\othersQuoteNoGap{{}}[][] \\normalText{{}}[][] \\bible{{}}[] \\*{{itemize}} commands needs to be mapped correctly. Also if possible translate optional parameters [] too. If there are discrepancies in meaning (since english text got some improvements), then prefer to make a new translation based English source.
     - The user suggestions may cover more content than the given paragraphs to translate. Please recognize which suggestions you are taking.
     - The user suggestions do not have footnotes nor any formating. Please follow the original English text and construct footnotes and formatting as needed using LaTeX commands seen in the source. Again, footnotes, needs to be translated properly to {language} language.
 
@@ -148,7 +148,7 @@ User translation suggestions:
 Translated paragraphs:"""
 
     message = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
+        model="claude-3-7-sonnet-20250219",
         max_tokens=8192,
         temperature=0,
         system=system_message,

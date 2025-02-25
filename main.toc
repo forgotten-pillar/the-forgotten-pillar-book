@@ -22,3 +22,4 @@
 \contentsline {chapter}{\numberline {XXI}Veliki otpad uskoro će se ostvariti}{158}{chapter.21}%
 \contentsline {chapter}{\numberline {XXII}Budućnost Fundamentalnih Principa}{163}{chapter.22}%
 \contentsline {chapter}{\numberline {XXIII}Uspostava pogrešnih Fundamentalnih Principa}{166}{chapter.23}%
+\contentsline {chapter}{\numberline {XXIV}Koraci do Omege}{170}{chapter.24}%

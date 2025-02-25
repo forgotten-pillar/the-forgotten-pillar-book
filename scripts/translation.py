@@ -104,10 +104,6 @@ Key rules to follow:
 3. **Bible Verse Translations:**
    - For every Bible verse encountered, use "{bible_verse_translation}" Bible translation.
 
-4. **Additional Instructions:**
-- single quotes arround words should be ’ and ‘, while if standing alone should be '.
-- there is a special dash symbol "—" which if used should be preserved in translation.
-
 Follow these instructions carefully to ensure that the translation is accurate and free of any extraneous commentary."""
     return system_prompt
 
@@ -140,7 +136,7 @@ Input paragraphs:
 Translated paragraphs:"""
 
     message = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
+        model="claude-3-7-sonnet-20250219",
         max_tokens=8192,
         temperature=0,
         system=system_message,
