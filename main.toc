@@ -25,3 +25,5 @@
 \contentsline {chapter}{\numberline {XXIV}Koraci do Omege}{170}{chapter.24}%
 \contentsline {chapter}{\numberline {XXV}Koraci prema otpadu}{181}{chapter.25}%
 \contentsline {chapter}{\numberline {XXVI}Proročki poziv za obnovu starih stupova vjere}{188}{chapter.26}%
+\contentsline {chapter}{\numberline {XXVII}Sjećanje na Njegovo učenje u našoj prošlosti}{193}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}Posljednji poziv}{203}{chapter.28}%
