@@ -23,3 +23,4 @@
 \contentsline {chapter}{\numberline {XXII}Budućnost Fundamentalnih Principa}{163}{chapter.22}%
 \contentsline {chapter}{\numberline {XXIII}Uspostava pogrešnih Fundamentalnih Principa}{166}{chapter.23}%
 \contentsline {chapter}{\numberline {XXIV}Koraci do Omege}{170}{chapter.24}%
+\contentsline {chapter}{\numberline {XXV}Koraci prema otpadu}{181}{chapter.25}%
