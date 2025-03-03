@@ -23,7 +23,7 @@ def is_considered_letter(c: str) -> bool:
         return False
     return c.isalpha()
 
-def fix_quotation_makrs(text: str) -> str:
+def fix_quotation_marks(text: str) -> str:
     """
     Check fix-quotations.py 'modify_text' for the original function.
     """
@@ -165,8 +165,8 @@ def process_latex_file(input_file, output_dir, client):
 
     paragraphs = split_into_paragraphs(content)
     translated_content = []
-    batch = []      
-    batch_orig = [] 
+    batch = []
+    batch_orig = []
     batch_size = 10
 
     def flush_batch():
@@ -193,7 +193,7 @@ def process_latex_file(input_file, output_dir, client):
                 flush_batch()
     flush_batch()
 
-    translated_content = [fix_quotation_makrs(p) for p in translated_content]
+    translated_content = [fix_quotation_marks(p) for p in translated_content]
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n\n'.join(translated_content))
@@ -232,6 +232,11 @@ def main():
     # Build the output directory path.
     output_dir = os.path.join(root_dir, "lang", target_lang_code, "chapters")
     setup_directories(output_dir)
+
+    # Check if the output file already exists.
+    output_file = os.path.join(output_dir, chapter_file)
+    if os.path.exists(output_file) and not overwrite:
+        sys.exit(f"Error: Output file '{output_file}' already exists. To overwrite, run the script with the 'overwrite' parameter.")
 
     # Get the API key from the environment (.env file).
     claude_api_key = os.environ.get("CLAUDE_API_KEY")

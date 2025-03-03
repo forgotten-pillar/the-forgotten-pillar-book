@@ -23,7 +23,7 @@ def is_considered_letter(c: str) -> bool:
         return False
     return c.isalpha()
 
-def fix_quotation_makrs(text: str) -> str:
+def fix_quotation_marks(text: str) -> str:
     """
     Check fix-quotations.py 'modify_text' for the original function.
     """
@@ -206,7 +206,7 @@ def process_latex_file(input_file, output_dir, suggestion_file, client):
                 flush_batch()
     flush_batch()
 
-    translated_content = [fix_quotation_makrs(p) for p in translated_content]
+    translated_content = [fix_quotation_marks(p) for p in translated_content]
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n\n'.join(translated_content))
