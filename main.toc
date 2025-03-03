@@ -17,15 +17,15 @@
 \contentsline {chapter}{\numberline {XVI}Dr. Kellogg and pantheism}{133}{chapter.16}%
 \contentsline {chapter}{\numberline {XVII}Reply to Kellogg’s trinitarian sentiments}{140}{chapter.17}%
 \contentsline {chapter}{\numberline {XVIII}The Heavenly Trio}{145}{chapter.18}%
-\contentsline {chapter}{\numberline {XIX}Ellen White and Matthew 28:19}{161}{chapter.19}%
-\contentsline {chapter}{\numberline {XX}Dr. Kellogg and Ellen White writings}{166}{chapter.20}%
-\contentsline {chapter}{\numberline {XXI}Remembering the beginning}{170}{chapter.21}%
-\contentsline {chapter}{\numberline {XXII}The bottom of the issue}{177}{chapter.22}%
-\contentsline {chapter}{\numberline {XXIII}The great apostasy is soon to be realized}{188}{chapter.23}%
-\contentsline {chapter}{\numberline {XXIV}The future of the Fundamental Principles}{194}{chapter.24}%
-\contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{197}{chapter.25}%
-\contentsline {chapter}{\numberline {XXVI}The steps to Omega}{201}{chapter.26}%
-\contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{213}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{220}{chapter.28}%
-\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{226}{chapter.29}%
-\contentsline {chapter}{\numberline {XXX}The final call}{235}{chapter.30}%
+\contentsline {chapter}{\numberline {XIX}Ellen White and Matthew 28:19}{162}{chapter.19}%
+\contentsline {chapter}{\numberline {XX}Dr. Kellogg and Ellen White writings}{167}{chapter.20}%
+\contentsline {chapter}{\numberline {XXI}Remembering the beginning}{171}{chapter.21}%
+\contentsline {chapter}{\numberline {XXII}The bottom of the issue}{178}{chapter.22}%
+\contentsline {chapter}{\numberline {XXIII}The great apostasy is soon to be realized}{189}{chapter.23}%
+\contentsline {chapter}{\numberline {XXIV}The future of the Fundamental Principles}{195}{chapter.24}%
+\contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{198}{chapter.25}%
+\contentsline {chapter}{\numberline {XXVI}The steps to Omega}{202}{chapter.26}%
+\contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{214}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{221}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{227}{chapter.29}%
+\contentsline {chapter}{\numberline {XXX}The final call}{236}{chapter.30}%
