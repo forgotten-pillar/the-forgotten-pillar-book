@@ -1,0 +1,26 @@
+\usepackage{verse}
+\usepackage{lipsum}
+
+% Define the visual separator
+\newcommand{\poemseparator}{
+  \begin{center}
+    \vspace{1em}
+    $\ast$~~~$\ast$~~~$\ast$
+    \vspace{1em}
+  \end{center}
+}
+
+% Define a command for titled poems
+\newenvironment{titledpoem}
+  {\poemseparator
+   \begin{verse}\itshape}
+  {\end{verse}}
+
+
+  \newcommand{\stanza}[1]{%
+  \begingroup
+  \begin{minipage}{\linewidth}
+    #1
+  \end{minipage}
+  \endgroup
+}
