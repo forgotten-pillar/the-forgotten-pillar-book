@@ -24,9 +24,9 @@ def translate_poem(prompt, client):
 
     return translated_poem
 
-def generate_prompt(chapter_file, english_poem, target_lang):
+def generate_prompt(chapter_file, english_poem, target_lang, number_of_poems):
     return f"""
-    Please write me a short poem based on the provided text in {target_lang} language. The rhyme should be in pares one after another (AABB form), not intemixed. The poem has to be concise drawing the main point from the given text. Notice, God's nature and the personality of God are not one and the same thing. Here is the LaTeX text, by which you can make a poem (notice \\egw{{}}[][] and \\egwnogap{{}}[][] and \\egwinline{{}}[][] are quotations of Ellen White):
+    Please write me {number_of_poems} {"different" if number_of_poems > 1 else ""} short poem{"s" if number_of_poems > 1 else ""} based on the provided text in {target_lang} language. The rhyme should be in pares one after another (AABB form), not intemixed. The poem has to be concise drawing the main point from the given text. Notice, God's nature and the personality of God are not one and the same thing. Here is the LaTeX text, by which you can make a poem (notice \\egw{{}}[][] and \\egwnogap{{}}[][] and \\egwinline{{}}[][] are quotations of Ellen White):
 
     Text:
     {chapter_file}
@@ -36,7 +36,8 @@ def generate_prompt(chapter_file, english_poem, target_lang):
     {english_poem}
 
     ---
-    Remember rhyme should be in AABB form.
+    Remember rhyme should be in AABB form. Poems should be in {target_lang} language.
+    {"You can write multiple poems one after another." if number_of_poems > 1 else ""}
     """
 
 def get_config_value(yaml_path, value_name):
@@ -53,14 +54,14 @@ def get_config_value(yaml_path, value_name):
         sys.exit(f"Error: '{value_name}' variable is missing in the YAML file.")
     return config[value_name]
 
-def process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code):
+def process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code, number_of_poems):
     chapter_content = read_latex_file(chapter_file)
     english_poem_content = read_latex_file(english_poem)
     output_file = os.path.join(output_dir, os.path.basename(chapter_file))
     # Assume config.yaml is in the target language directory (i.e. one level up from output_dir)
     system_prompt_config_file = os.path.join(os.path.dirname(output_dir), "config.yaml")
     target_lang = get_config_value(system_prompt_config_file, "language")
-    prompt = generate_prompt(chapter_content, english_poem_content, target_lang)
+    prompt = generate_prompt(chapter_content, english_poem_content, target_lang, number_of_poems)
     
     print(f"Prompt: {prompt}")
 
@@ -97,8 +98,12 @@ def main():
     target_lang_code = sys.argv[1]
     chapter = sys.argv[2]
     overwrite = False
+    number_of_poems = 1
     if len(sys.argv) == 4:
         if sys.argv[3].lower() == "overwrite":
+            overwrite = True
+        elif sys.argv[3].isdigit():
+            number_of_poems = int(sys.argv[3])
             overwrite = True
         else:
             sys.exit("Usage: python translate-poems.py <target_lang_code> <chapter_file.tex> [overwrite]")
@@ -140,7 +145,7 @@ def main():
     client = Anthropic(api_key=claude_api_key)
 
     print(f"Processing '{chapter_file}' for target language '{target_lang_code}'...")
-    process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code)
+    process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code, number_of_poems)
     print(f"Completed translation of '{chapter_file}'. Output stored in '{output_dir}'.")
 
 if __name__ == "__main__":
