@@ -5,6 +5,9 @@ from anthropic import Anthropic
 from pathlib import Path
 from dotenv import load_dotenv
 
+def translate_poem_dummy(prompt, client):
+    return prompt
+
 def translate_poem(prompt, client):
     message = client.messages.create(
         model="claude-3-7-sonnet-20250219",
@@ -27,14 +30,13 @@ def generate_prompt(chapter_file, english_poem, target_lang):
 
     Text:
     {chapter_file}
-
     ---
-    The following is English poem based on the equivalent English text:
+    Please output the poem in the LaTeX format as an example shown below:
+
     {english_poem}
 
     ---
-    You can use English poem as a guide, but do not translate from English, because then you will loose the rhyme. Therefore use it only as a guide, and write a poem in the spirit of {target_lang} language.
-    Please output the poem in the LaTeX format as you saw in English example.
+    Remember rhyme should be in AABB form.
     """
 
 def get_config_value(yaml_path, value_name):
@@ -51,7 +53,7 @@ def get_config_value(yaml_path, value_name):
         sys.exit(f"Error: '{value_name}' variable is missing in the YAML file.")
     return config[value_name]
 
-def process_latex_file(chapter_file, english_poem, output_dir, client):
+def process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code):
     chapter_content = read_latex_file(chapter_file)
     english_poem_content = read_latex_file(english_poem)
     output_file = os.path.join(output_dir, os.path.basename(chapter_file))
@@ -66,6 +68,15 @@ def process_latex_file(chapter_file, english_poem, output_dir, client):
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(translated_poem)
+
+    # Check if \input{lang/target_lang_code} exists in chapter_content
+    if rf"\input{{lang/{target_lang_code}/poems/{chapter}}}" not in chapter_content and rf"\input{{lang/{target_lang_code}/poems/{chapter.replace('.tex', '')}}}" not in chapter_content:
+        new_content = chapter_content.strip() + "\n\n" + rf"\input{{lang/{target_lang_code}/poems/{chapter.replace('.tex', '')}}}"
+
+        # Save the updated content back to chapter_file
+        with open(chapter_file, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+    
 
 def setup_directories(output_dir):
     os.makedirs(output_dir, exist_ok=True)
@@ -129,7 +140,7 @@ def main():
     client = Anthropic(api_key=claude_api_key)
 
     print(f"Processing '{chapter_file}' for target language '{target_lang_code}'...")
-    process_latex_file(chapter_file, english_poem, output_dir, client)
+    process_latex_file(chapter_file, english_poem, output_dir, client, chapter, target_lang_code)
     print(f"Completed translation of '{chapter_file}'. Output stored in '{output_dir}'.")
 
 if __name__ == "__main__":
