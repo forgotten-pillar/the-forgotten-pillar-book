@@ -121,7 +121,7 @@ def split_into_paragraphs(content):
 
 def is_structural_latex_command(paragraph):
     # Only treat as non-translatable if the paragraph is solely a structural command.
-    structural_commands = []
+    structural_commands = ["\\input"]
     stripped = paragraph.strip()
     return any(stripped.startswith(cmd) for cmd in structural_commands)
 
