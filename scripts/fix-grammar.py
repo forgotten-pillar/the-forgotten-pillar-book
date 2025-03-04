@@ -145,7 +145,7 @@ def process_latex_file(input_file, output_dir, client):
         f.write(grammar_list)
 
 def main():
-     # Ensure the correct number of command-line arguments: 
+    # Ensure the correct number of command-line arguments: 
     # either 2 arguments (target_lang_code and chapter file) OR
     # 3 arguments (with the third being "overwrite")
     if len(sys.argv) not in [3, 4]:
