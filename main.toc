@@ -26,6 +26,6 @@
 \contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{222}{chapter.25}%
 \contentsline {chapter}{\numberline {XXVI}The steps to Omega}{227}{chapter.26}%
 \contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{240}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{247}{chapter.28}%
-\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{253}{chapter.29}%
-\contentsline {chapter}{\numberline {XXX}The final call}{262}{chapter.30}%
+\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{248}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{254}{chapter.29}%
+\contentsline {chapter}{\numberline {XXX}The final call}{264}{chapter.30}%
