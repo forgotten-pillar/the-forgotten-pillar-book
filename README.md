@@ -1,51 +1,48 @@
-## Tranlsation Script
-Run command:
-```
-python scripts/trasnlation.py [target-lang] [chapter.tex]
-```
-
-In example: `python scripts/translation.py es chapter30.tex` will translate chapter 30 from English to Spanish, and will store it to `lang/es/chapters/chapter30.tex`.
-
-- if the given chapter already exists, it will prevent overwriting, unless the third optional parameter `overwrite` is submitted.
-
-## Translation with suggestions Script
-Translation with suggestions is useful for already translated content from the first edition of the book. The AI would consult the suggestions within the translation and it will follow it, unless there is discrepency with the translation and the original English text.
-
+## Translation Script
 Run command:
 
+```
+python scripts/translation.py [target-lang] [chapter.tex]
+```
+For example, running `python scripts/translation.py es chapter30.tex` will translate chapter 30 from English to Spanish and store it in `lang/es/chapters/chapter30.tex`.
+
+- If the given chapter already exists, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
+
+## Translation with Suggestions Script
+Translation with suggestions is useful for already translated content from the first edition of the book. The AI will consult the provided suggestions within the translation and follow them unless there is a discrepancy between the translation and the original English text.
+
+Run command:
 ```
 python scripts/translate-by-suggestions.py [target-lang] [chapter.tex]
 ```
-- There must be suggestions in your `/lang/[target-lang]/suggestions/[chapter.txt]` with `*.txt` extension. If non existant, then the script will bail out.
-- if the given chapter already exists, it will prevent overwriting, unless the third optional parameter `overwrite` is submitted.
+- Suggestions must exist in `/lang/[target-lang]/suggestions/[chapter.txt]` with a `.txt` extension. If no suggestions are found, the script will exit.
+- If the given chapter already exists, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
 
-## Fix quotation Script
-Claude does not respect opening and closing quotation marks, instead it outputs universal quotation marks. Those do not look good with Garammond font, so the quotation marks should be changed. This is a very tideous manual process, but luckily this script will fix it automatically.
+## Fix Quotation Script
+Claude does not respect opening and closing quotation marks, instead outputting universal quotation marks. These do not look good with the Garamond font, so the quotation marks should be replaced. This is a very tedious manual process, but this script automates the correction.
 
 Run command:
-
 ```
-python scripts/fix-quotations.py /lang/[target-lang]/chapters/[chpater.tex]
+python scripts/fix-quotations.py /lang/[target-lang]/chapters/[chapter.tex]
 ```
-In case that the quotation marks should be reversed run:
+If the quotation marks need to be reversed, run:
 ```
 python scripts/fix-quotations-back.py /lang/[target-lang]/chapters/[chapter.tex]
 ```
-
-## Fix grammar Script
-When translated, there is a grammar checker which will find possible grammar mistakes in the translation.
+## Fix Grammar Script
+When a translation is completed, a grammar checker runs to detect possible grammar mistakes.
 
 Run command:
 ```
 python scripts/fix-grammar.py [target-lang] [chapter.tex]
 ```
-- if the given grammar suggestion for the given chapter already exists, it will prevent overwriting, unless the third optional parameter `overwrite` is submitted.
+- If grammar suggestions for the given chapter already exist, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
 
 ## Create Overleaf Project
-There is a free LaTeX setup - ![overleaf.com](https://overleaf.com). There is a script which prepares entire project for OverLeaf for the given language
+There is a free LaTeX setup available at [Overleaf](https://overleaf.com). A script is available to prepare an entire project for Overleaf in the given language.
 
 Run command:
 ```
 python scripts/create-overleaf-project.py [target-lang]
 ```
-- this will outout zip file which can be imported in overleaf
+- This will output a ZIP file that can be imported into Overleaf.
