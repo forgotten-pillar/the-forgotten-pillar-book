@@ -48,4 +48,4 @@ python scripts/create-overleaf-project.py [target-lang]
 - This will output a ZIP file that can be imported into Overleaf.
 
 ## Overleaf compilation troubleshooting workflow
-![overleaf troubleshooting](https://drive.google.com/file/d/1KfBPEE30SdzK2yIF_Rw96tcutAzT6_29/view?usp=sharing)
+[overleaf troubleshooting](https://drive.google.com/file/d/1KfBPEE30SdzK2yIF_Rw96tcutAzT6_29/view?usp=sharing)
