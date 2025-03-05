@@ -2,6 +2,7 @@ import requests
 import sys
 import os
 import re
+import yaml
 
 def setup_directories(output_dir):
         os.makedirs(output_dir, exist_ok=True)
@@ -68,13 +69,33 @@ def unescape_latex_url(escaped_url):
     # Remove escaped underscores within the URL
     return escaped_url.replace(r'\_', '_')
 
-def fix_egw_links(chapter_content, update_links_manual):
+def load_yaml_links(yaml_path):
+    """
+    Load links from a YAML file.
+    
+    Args:
+        yaml_path (str): Path to the YAML file
+    
+    Returns:
+        dict: Dictionary of links from YAML
+    """
+    try:
+        with open(yaml_path, 'r', encoding='utf-8') as file:
+            return yaml.safe_load(file) or {}
+    except FileNotFoundError:
+        print(f"Warning: YAML file not found at {yaml_path}")
+        return {}
+    except yaml.YAMLError as e:
+        print(f"Error parsing YAML file: {e}")
+        return {}
+
+def fix_egw_links(chapter_content, yaml_links):
     """
     Find and replace EGW Writings links with 'ref' to 'read' URLs.
     
     Args:
         chapter_content (str): Content of the LaTeX file
-        update_links_manual (str): Name of the chapter file which will be used to log links without 'para' parameter
+        yaml_links (dict): Manually mapped links from YAML
     
     Returns:
         tuple: Updated content and number of links updated
@@ -85,12 +106,10 @@ def fix_egw_links(chapter_content, update_links_manual):
     
     # Counter for updated links
     links_updated = 0
-    
-    # Clear previous log file
-    open(update_links_manual, 'w').close()
+    missing_links = []
     
     def replace_link(match):
-        nonlocal links_updated
+        nonlocal links_updated, missing_links
         full_match = match.group(0)  # Entire match including brackets
         original_url = match.group(1)  # URL without brackets
         ref_url = match.group(2)  # URL with ref parameter
@@ -100,10 +119,22 @@ def fix_egw_links(chapter_content, update_links_manual):
         unescaped_url = unescape_latex_url(ref_url)
         
         try:
-            # If no para parameter, log the link
+            # First, check if the link exists in the YAML mapping
+            if unescaped_url in yaml_links:
+                # If the link is in the YAML, use the mapped URL
+                new_url = yaml_links[unescaped_url]
+                
+                # If the original had escaped underscores, re-escape the new URL
+                if '\_' in original_url:
+                    new_url = new_url.replace('_', r'\_')
+                
+                links_updated += 1
+                print(f"Mapped: {original_url} -> {new_url}")
+                return f'[{new_url}]'
+            
+            # If no para parameter, log as a missing link
             if not para_param:
-                with open(update_links_manual, 'a') as log_file:
-                    log_file.write(f"{original_url}\n")
+                missing_links.append(original_url)
                 return full_match
             
             # Get the redirected URL
@@ -133,6 +164,12 @@ def fix_egw_links(chapter_content, update_links_manual):
     # Replace all matching URLs
     updated_content = re.sub(egw_link_pattern, replace_link, chapter_content)
     
+    # Print out any missing links
+    if missing_links:
+        print("\nWARNING: The following links were not found in the YAML mapping and lacked 'para' parameter:")
+        for link in missing_links:
+            print(link)
+    
     return updated_content, links_updated
 
 def main():
@@ -152,17 +189,18 @@ def main():
     chapter_file = os.path.join(root_dir, "lang", target_lang_code, "chapters", chapter_filename)
     if not os.path.exists(chapter_file):
         sys.exit(f"Error: Chapter file '{chapter_file}' does not exist.")
+    
+    # Path to links.yaml file (assumed to be in the same directory as the script)
+    links_yaml_path = os.path.join(script_dir, "links.yaml")
+    
+    # Load links from YAML
+    yaml_links = load_yaml_links(links_yaml_path)
 
     # Read the chapter file
     chapter_content = read_latex_file(chapter_file)
 
-    # Build the output directory path.
-    links_dir = os.path.join(root_dir, "lang", target_lang_code, "links")
-    setup_directories(links_dir)
-    update_links_manual = os.path.join(links_dir, chapter_filename)
-
     # Fix EGW links
-    updated_content, num_links_updated = fix_egw_links(chapter_content, update_links_manual)
+    updated_content, num_links_updated = fix_egw_links(chapter_content, yaml_links)
 
     # Write the updated content back to the same file
     write_latex_file(chapter_file, updated_content)
@@ -170,7 +208,6 @@ def main():
     # Print the number of links updated
     print(f"Successfully processed links in {chapter_filename}")
     print(f"Total links updated: {num_links_updated}")
-    print(f"Links without 'para' parameter logged in: {chapter_filename}_links_without_para.log")
 
 if __name__ == "__main__":
     main()
