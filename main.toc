@@ -16,14 +16,15 @@
 \contentsline {chapter}{\numberline {XV}Dr. Kellogg i doktrina o Trojstvu}{120}{chapter.15}%
 \contentsline {chapter}{\numberline {XVI}Dr. Kellogg i panteizam}{133}{chapter.16}%
 \contentsline {chapter}{\numberline {XVII}Odgovor na Kellogove trinitarijanske sentimente}{139}{chapter.17}%
-\contentsline {chapter}{\numberline {XVIII}Dr. Kellogg i spisi Ellen White}{143}{chapter.18}%
-\contentsline {chapter}{\numberline {XIX}Prisjećanje početka}{147}{chapter.19}%
-\contentsline {chapter}{\numberline {XX}Suština problema}{154}{chapter.20}%
-\contentsline {chapter}{\numberline {XXI}Veliki otpad uskoro će se ostvariti}{164}{chapter.21}%
-\contentsline {chapter}{\numberline {XXII}Budućnost Fundamentalnih Principa}{169}{chapter.22}%
-\contentsline {chapter}{\numberline {XXIII}Uspostava pogrešnih Fundamentalnih Principa}{172}{chapter.23}%
-\contentsline {chapter}{\numberline {XXIV}Koraci do Omege}{176}{chapter.24}%
-\contentsline {chapter}{\numberline {XXV}Koraci prema otpadu}{187}{chapter.25}%
-\contentsline {chapter}{\numberline {XXVI}Proročki poziv za obnovu starih stupova vjere}{194}{chapter.26}%
-\contentsline {chapter}{\numberline {XXVII}Sjećanje na Njegovo učenje u našoj prošlosti}{199}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}Posljednji poziv}{209}{chapter.28}%
+\contentsline {chapter}{\numberline {XVIII}Nebeski Trio}{143}{chapter.18}%
+\contentsline {chapter}{\numberline {XIX}Dr. Kellogg i spisi Ellen White}{161}{chapter.19}%
+\contentsline {chapter}{\numberline {XX}Prisjećanje početka}{165}{chapter.20}%
+\contentsline {chapter}{\numberline {XXI}Suština problema}{172}{chapter.21}%
+\contentsline {chapter}{\numberline {XXII}Veliki otpad uskoro će se ostvariti}{182}{chapter.22}%
+\contentsline {chapter}{\numberline {XXIII}Budućnost Fundamentalnih Principa}{187}{chapter.23}%
+\contentsline {chapter}{\numberline {XXIV}Uspostava pogrešnih Fundamentalnih Principa}{190}{chapter.24}%
+\contentsline {chapter}{\numberline {XXV}Koraci do Omege}{194}{chapter.25}%
+\contentsline {chapter}{\numberline {XXVI}Koraci prema otpadu}{205}{chapter.26}%
+\contentsline {chapter}{\numberline {XXVII}Proročki poziv za obnovu starih stupova vjere}{212}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}Sjećanje na Njegovo učenje u našoj prošlosti}{217}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Posljednji poziv}{227}{chapter.29}%
