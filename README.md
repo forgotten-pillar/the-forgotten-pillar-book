@@ -47,5 +47,14 @@ python scripts/create-overleaf-project.py [target-lang]
 ```
 - This will output a ZIP file that can be imported into Overleaf.
 
+## Fix Links Script
+The old manuscript contains old egwwritings.org link structure. It should be updated to the new structure. Running this script for each chapter will convert the links into the new structure. If it is possible to get redirected links, then it will query egwwritings.org, if not it will check for the manual mapping stored in `/lang/scripts/links.yaml` file.
+
+Run command:
+```
+python scripts/fix-links.py [target-lang] [chapter.tex]
+```
+- This will update each chapter with the correct links towards egwwritings.org
+
 ## Overleaf compilation troubleshooting workflow
 [overleaf troubleshooting](https://drive.google.com/file/d/1KfBPEE30SdzK2yIF_Rw96tcutAzT6_29/view?usp=sharing)
