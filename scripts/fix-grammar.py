@@ -91,11 +91,11 @@ def generate_prompt(language, content):
     The text given is LaTeX-formatted text.
 
     Key rules to follow:
-    1. **Ignore the following LaTeX directives**
-    \\egw{{}}[][], \\egwnogap{{}}[][], \\othersnogap{{}}[][], \\othersQuote{{}}[][], \\othersQuoteNoGap{{}}[][], \\normalText{{}}[][], \\bible{{}}[]
-    These directives represent quotations, so they are not something which needs to be fixed.
+    {"1. **Ignore the following LaTeX directives**" if language == "English" else ""}
+    {"\\egw{{}}[][], \\egwnogap{{}}[][], \\othersnogap{{}}[][], \\othersQuote{{}}[][], \\othersQuoteNoGap{{}}[][], \\normalText{{}}[][], \\bible{{}}[]" if language == "English" else ""}
+    {"These directives represent quotations, so they are not something which needs to be fixed." if language == "English" else ""}
 
-    2. **OUTPUT FORMAT**
+    {"2." if language == "English" else "1."} **OUTPUT FORMAT**
     Please output fixes as a list in the following format for an item:
     ```
     # [explain the change made]
