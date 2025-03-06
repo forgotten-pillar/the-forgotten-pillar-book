@@ -7,7 +7,7 @@
 \contentsline {chapter}{\numberline {VI}Ispitivanje Testa}{52}{chapter.6}%
 \contentsline {chapter}{\numberline {VII}Autoritet Fundamentalnih Principa}{58}{chapter.7}%
 \contentsline {chapter}{\numberline {VIII}Konstruktivna Kritika}{66}{chapter.8}%
-\contentsline {chapter}{\numberline {IX}Odgovarajuće Riješenje}{75}{chapter.9}%
+\contentsline {chapter}{\numberline {IX}Odgovarajuće Rješenje}{75}{chapter.9}%
 \contentsline {chapter}{\numberline {X}Je li Bog Osoba? - Članak John N. Loughborougha}{78}{chapter.10}%
 \contentsline {chapter}{\numberline {XI}Ličnost Boga - Članak James S. Whitea}{87}{chapter.11}%
 \contentsline {chapter}{\numberline {XII}Realnost Neba}{98}{chapter.12}%
