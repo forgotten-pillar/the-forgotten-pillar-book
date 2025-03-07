@@ -25,7 +25,7 @@
 \contentsline {chapter}{\numberline {XXIV}Budućnost Fundamentalnih Principa}{198}{chapter.24}%
 \contentsline {chapter}{\numberline {XXV}Uspostava pogrešnih Fundamentalnih Principa}{202}{chapter.25}%
 \contentsline {chapter}{\numberline {XXVI}Koraci do Omege}{207}{chapter.26}%
-\contentsline {chapter}{\numberline {XXVII}Koraci prema otpadu}{218}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}Proročki poziv za obnovu starih stupova vjere}{225}{chapter.28}%
-\contentsline {chapter}{\numberline {XXIX}Sjećanje na Njegovo učenje u našoj prošlosti}{230}{chapter.29}%
-\contentsline {chapter}{\numberline {XXX}Posljednji poziv}{240}{chapter.30}%
+\contentsline {chapter}{\numberline {XXVII}Koraci prema otpadu}{219}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}Proročki poziv za obnovu starih stupova vjere}{226}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Sjećanje na Njegovo učenje u našoj prošlosti}{231}{chapter.29}%
+\contentsline {chapter}{\numberline {XXX}Posljednji poziv}{241}{chapter.30}%
