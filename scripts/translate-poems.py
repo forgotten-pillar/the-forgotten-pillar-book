@@ -38,6 +38,7 @@ def generate_prompt(chapter_file, english_poem, target_lang, number_of_poems):
     ---
     Remember rhyme should be in AABB form. Poems should be in {target_lang} language.
     {"You can write multiple poems one after another." if number_of_poems > 1 else ""}
+    THE RYME SHOULD BE IN THE SPIRIT OF {target_lang.upper()} LANGUAGE.
     """
 
 def get_config_value(yaml_path, value_name):
