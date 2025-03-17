@@ -114,7 +114,40 @@
 \renewcommand{\numberline}[1]{}
 
 %-------------------------------------------------------------------
-% Chapter formatting using titlesec
+% QR codes with absolute positioning
+\usepackage{qrcode}
+\usepackage{tikz}
+\qrset{link, height=1.5cm}
+
+% QR code command for chapters using absolute positioning
+\newcommand{\qrchapter}[2]{%
+  % Place a marker at the current position
+  \tikz[remember picture] \node[coordinate] (chapter-start) {};%
+  % Create the chapter
+  \chapter{#2}%
+  % Place the QR code at fixed position from the top of the page
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=center] at (current page.north) [yshift=-3cm] {%
+      \qrcode[height=1.5cm]{#1}%
+    };
+  \end{tikzpicture}%
+}
+
+% QR code command for starred chapters using absolute positioning
+\newcommand{\qrchapterstar}[2]{%
+  % Place a marker at the current position
+  \tikz[remember picture] \node[coordinate] (chapter-start) {};%
+  % Create the chapter
+  \chapter*{#2}%
+  % Place the QR code at fixed position from the top of the page
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=center] at (current page.north) [yshift=-3cm] {%
+      \qrcode[height=1.5cm]{#1}%
+    };
+  \end{tikzpicture}%
+}
+
+% Keep your existing chapter formatting
 \usepackage[center,sc]{titlesec}
 \renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[block]
