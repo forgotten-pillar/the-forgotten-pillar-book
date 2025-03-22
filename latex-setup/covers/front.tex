@@ -1,0 +1,13 @@
+\pagestyle{empty}
+
+% add full page image from cover book print front
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {%
+    \includegraphics[width=\paperwidth,height=\paperheight]{lang/\currentlang/covers/\currentlayout/front.jpg}%
+  };
+\end{tikzpicture}
+
+% add two empty pages
+\newpage
+\thispagestyle{empty}
+\mbox{}
