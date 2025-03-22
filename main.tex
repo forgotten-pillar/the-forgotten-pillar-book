@@ -7,27 +7,24 @@
 
 % Define language and layout variables directly in main.tex
 % ---- THIS IS THE PLACE TO CHANGE THE LANGUAGE AND LAYOUT ----
-\def\currentlang{hr}
-\def\currentlayout{us-letter-half}
-
-% Load the appropriate layout package
-\usepackage{latex-setup/layout/\currentlayout}
-
-% Defining the golden ratio
-\newcommand{\goldenratio}{1.618}
-
-% Input and output encoding
-\usepackage[T1]{fontenc}
+\def\currentlang{hr} % currently: en, hr, pl, fr
+\def\currentlayout{us-letter-half} % all options: book-print, iso-a4, iso-a5, mobile, us-letter, us-letter-half
 
 % Book information
 \newcommand{\authorname}{Michael Presečan \& Marjan Gerguri}
 \newcommand{\website}{forgottenpillar.com}
 \newcommand{\editionyear}{2025}
 
+% Input and output encoding
+\usepackage[T1]{fontenc}
+
 % Styling packages
 \usepackage{latex-setup/styles/poems}
 \usepackage{latex-setup/styles/options}
 \usepackage{latex-setup/styles/forgottenpillar}
+
+% Load the appropriate layout package
+\usepackage{latex-setup/layout/\currentlayout}
 
 % Load language-specific general content
 \input{lang/\currentlang/frontmatter/general}
