@@ -6,8 +6,9 @@
 \documentclass[12pt,openany]{book} 
 
 % Define language and layout variables directly in main.tex
-\def\currentlang{en}
-\def\currentlayout{book-print}
+% ---- THIS IS THE PLACE TO CHANGE THE LANGUAGE AND LAYOUT ----
+\def\currentlang{hr}
+\def\currentlayout{us-letter-half}
 
 % Load the appropriate layout package
 \usepackage{latex-setup/layout/\currentlayout}
@@ -36,7 +37,7 @@
 
 \begin{document}
 % Include covers based on language and layout
-
+\input{latex-setup/covers/front}
 \input{lang/\currentlang/content}
-
+\input{latex-setup/covers/back}
 \end{document}
