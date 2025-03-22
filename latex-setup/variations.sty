@@ -1,0 +1,23 @@
+% Define commands to store the current language and layout
+\providecommand{\currentlang}{en}  % Default language
+\providecommand{\currentlayout}{book-print}  % Default layout
+
+% Command to set the language - only define if not already defined
+\providecommand{\setlanguage}[1]{%
+  \renewcommand{\currentlang}{#1}%
+}
+
+% Command to set the layout
+\providecommand{\setlayout}[1]{%
+  \renewcommand{\currentlayout}{#1}%
+  \usepackage{latex-setup/layout/#1}%
+}
+
+% Commands to include the appropriate covers
+\providecommand{\includecoverfront}{%
+  \input{covers/\currentlang/\currentlayout/front-cover.tex}%
+}
+
+\providecommand{\includecoverback}{%
+  \input{covers/\currentlang/\currentlayout/back-cover.tex}%
+}

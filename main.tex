@@ -5,6 +5,13 @@
 % paper size is in preamble.sty
 \documentclass[12pt,openany]{book} 
 
+% Define language and layout variables directly in main.tex
+\def\currentlang{en}
+\def\currentlayout{book-print}
+
+% Load the appropriate layout package
+\usepackage{latex-setup/layout/\currentlayout}
+
 % Defining the golden ratio
 \newcommand{\goldenratio}{1.618}
 
@@ -16,24 +23,20 @@
 \newcommand{\website}{forgottenpillar.com}
 \newcommand{\editionyear}{2025}
 
-\input{lang/en/frontmatter/general}
-
-\title{\booktitle}
-\author{\authorname}
-
-% layout
-\usepackage{latex-setup/layout/book-print}
-% \usepackage{latex-setup/layout/iso-a4}
-% \usepackage{latex-setup/layout/iso-a5}
-% \usepackage{latex-setup/layout/mobile}
-% \usepackage{latex-setup/layout/us-letter-half}
-% \usepackage{latex-setup/layout/us-letter}
-
 % Styling packages
 \usepackage{latex-setup/styles/poems}
 \usepackage{latex-setup/styles/options}
 \usepackage{latex-setup/styles/forgottenpillar}
 
+% Load language-specific general content
+\input{lang/\currentlang/frontmatter/general}
+
+\title{\booktitle}
+\author{\authorname}
+
 \begin{document}
-\input{lang/en/content}
+% Include covers based on language and layout
+
+\input{lang/\currentlang/content}
+
 \end{document}
