@@ -111,7 +111,9 @@
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\large\itshape}
 \renewcommand{\cftchappagefont}{\normalfont}
-\renewcommand{\numberline}[1]{}
+% In the TOC formatting section of your options.sty
+\renewcommand{\cftchapdotsep}{\cftdotsep} % Adds dots for chapters
+% REMOVED: \renewcommand{\numberline}[1]{} -- This was causing the issue
 
 %-------------------------------------------------------------------
 % QR codes with absolute positioning
@@ -172,3 +174,12 @@
 %-------------------------------------------------------------------
 % Ensure first paragraph is indented
 \usepackage{indentfirst}
+
+%-------------------------------------------------------------------
+% TOC formatting for chapter numbers
+\usepackage{tocloft}
+\renewcommand{\cftchappresnum}{}
+\renewcommand{\cftchapaftersnum}{}
+\setlength{\cftchapnumwidth}{4.5em} % Adjust width as needed
+\renewcommand{\cftdot}{.} % The character used for dots
+\renewcommand{\cftdotsep}{3} % Spacing between dots

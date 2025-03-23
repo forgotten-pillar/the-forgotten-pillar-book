@@ -1,31 +1,33 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {I}Temelj Naše Vjere}{8}{chapter.1}%
-\contentsline {chapter}{\numberline {II}Fundamentalni Principi}{20}{chapter.2}%
-\contentsline {chapter}{\numberline {III}Povijesni Kontekst}{29}{chapter.3}%
-\contentsline {chapter}{\numberline {IV}Revizija Knjige “Živi Hram”}{35}{chapter.4}%
-\contentsline {chapter}{\numberline {V}Teorije Krpanja - Lt253-1903}{43}{chapter.5}%
-\contentsline {chapter}{\numberline {VI}Ispitivanje Testa}{61}{chapter.6}%
-\contentsline {chapter}{\numberline {VII}Autoritet Fundamentalnih Principa}{68}{chapter.7}%
-\contentsline {chapter}{\numberline {VIII}Konstruktivna Kritika}{77}{chapter.8}%
-\contentsline {chapter}{\numberline {IX}Odgovarajuće Rješenje}{88}{chapter.9}%
-\contentsline {chapter}{\numberline {X}Je li Bog Osoba? - Članak John N. Loughborougha}{91}{chapter.10}%
-\contentsline {chapter}{\numberline {XI}Ličnost Boga - Članak James S. Whitea}{102}{chapter.11}%
-\contentsline {chapter}{\numberline {XII}Realnost Neba}{115}{chapter.12}%
-\contentsline {chapter}{\numberline {XIII}Bog Subote nasuprot boga nedjelje - J. B. Frisbie}{121}{chapter.13}%
-\contentsline {chapter}{\numberline {XIV}Adventistički pioniri i doktrina o Trojstvu}{129}{chapter.14}%
-\contentsline {chapter}{\numberline {XV}Dr. Kellogg i doktrina o Trojstvu}{143}{chapter.15}%
-\contentsline {chapter}{\numberline {XVI}Dr. Kellogg i panteizam}{160}{chapter.16}%
-\contentsline {chapter}{\numberline {XVII}Odgovor na Kellogove trinitarijanske sentimente}{168}{chapter.17}%
-\contentsline {chapter}{\numberline {XVIII}Nebeski Trio}{173}{chapter.18}%
-\contentsline {chapter}{\numberline {XIX}Ellen White i Matej 28:19}{192}{chapter.19}%
-\contentsline {chapter}{\numberline {XX}Dr. Kellogg i spisi Ellen White}{202}{chapter.20}%
-\contentsline {chapter}{\numberline {XXI}Prisjećanje početka}{207}{chapter.21}%
-\contentsline {chapter}{\numberline {XXII}Suština problema}{216}{chapter.22}%
-\contentsline {chapter}{\numberline {XXIII}Veliki otpad uskoro će se ostvariti}{228}{chapter.23}%
-\contentsline {chapter}{\numberline {XXIV}Budućnost Fundamentalnih Principa}{236}{chapter.24}%
-\contentsline {chapter}{\numberline {XXV}Uspostava pogrešnih Fundamentalnih Principa}{241}{chapter.25}%
-\contentsline {chapter}{\numberline {XXVI}Koraci do Omege}{246}{chapter.26}%
-\contentsline {chapter}{\numberline {XXVII}Koraci prema otpadu}{259}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}Proročki poziv za obnovu starih stupova vjere}{267}{chapter.28}%
-\contentsline {chapter}{\numberline {XXIX}Sjećanje na Njegovo učenje u našoj prošlosti}{274}{chapter.29}%
-\contentsline {chapter}{\numberline {XXX}Posljednji poziv}{285}{chapter.30}%
+\contentsline {chapter}{Introduction}{2}{chapter*.2}%
+\contentsline {chapter}{\numberline {I}The Foundation of Our Faith}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {II}The Fundamental Principles}{22}{chapter.2}%
+\contentsline {chapter}{\numberline {III}The historical context}{32}{chapter.3}%
+\contentsline {chapter}{\numberline {IV}Revision of “Living Temple”}{39}{chapter.4}%
+\contentsline {chapter}{\numberline {V}The patchwork theories - Lt253-1903}{47}{chapter.5}%
+\contentsline {chapter}{\numberline {VI}Examining the test}{67}{chapter.6}%
+\contentsline {chapter}{\numberline {VII}The authority of the Fundamental Principles}{74}{chapter.7}%
+\contentsline {chapter}{\numberline {VIII}The constructive criticism}{83}{chapter.8}%
+\contentsline {chapter}{\numberline {IX}The proper solution}{95}{chapter.9}%
+\contentsline {chapter}{\numberline {X}Is God a person? - by John N. Loughborough}{99}{chapter.10}%
+\contentsline {chapter}{\numberline {XI}The personality of God - by James S. White}{111}{chapter.11}%
+\contentsline {chapter}{\numberline {XII}Heaven's reality}{124}{chapter.12}%
+\contentsline {chapter}{\numberline {XIII}The Sabbath God vs. Sunday God - J. B. Frisbie}{130}{chapter.13}%
+\contentsline {chapter}{\numberline {XIV}Adventist pioneers and the Trinity doctrine}{139}{chapter.14}%
+\contentsline {chapter}{\numberline {XV}Dr. Kellogg and the Trinity doctrine}{153}{chapter.15}%
+\contentsline {chapter}{\numberline {XVI}Dr. Kellogg and pantheism}{172}{chapter.16}%
+\contentsline {chapter}{\numberline {XVII}Reply to Kellogg’s trinitarian sentiments}{181}{chapter.17}%
+\contentsline {chapter}{\numberline {XVIII}The Heavenly Trio}{187}{chapter.18}%
+\contentsline {chapter}{\numberline {XIX}Ellen White and Matthew 28:19}{208}{chapter.19}%
+\contentsline {chapter}{\numberline {XX}Dr. Kellogg and Ellen White writings}{219}{chapter.20}%
+\contentsline {chapter}{\numberline {XXI}Remembering the beginning}{225}{chapter.21}%
+\contentsline {chapter}{\numberline {XXII}The bottom of the issue}{236}{chapter.22}%
+\contentsline {chapter}{\numberline {XXIII}The great apostasy is soon to be realized}{249}{chapter.23}%
+\contentsline {chapter}{\numberline {XXIV}The future of the Fundamental Principles}{257}{chapter.24}%
+\contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{262}{chapter.25}%
+\contentsline {chapter}{\numberline {XXVI}The steps to Omega}{268}{chapter.26}%
+\contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{282}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{291}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{298}{chapter.29}%
+\contentsline {chapter}{\numberline {XXX}The final call}{309}{chapter.30}%
+\contentsline {chapter}{Appendix}{315}{chapter*.24}%
