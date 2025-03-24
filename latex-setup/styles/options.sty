@@ -99,21 +99,24 @@
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
-\fancyhf{} 
+\fancyhf{} % Clear all headers and footers
 \renewcommand{\headrulewidth}{0pt}
-% Place page number in center footer (instead of nonstandard [CFE,CFO])
-\fancyfoot[C]{\thepage}
-\fancyhead[CO]{\textsc{\leftmark}}
-\fancyhead[CE]{\textsc{\booktitle}}
+
+\fancyfoot[C]{\thepage} % Center the page number in the footer
+\fancyhead[CO]{\textsc{\leftmark}} % Chapter title on odd pages
+\fancyhead[CE]{\textsc{\booktitle}} % Book title on even pages
 
 %-------------------------------------------------------------------
-% Table of contents formatting using tocloft
+% Table of contents formatting
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\large\itshape}
 \renewcommand{\cftchappagefont}{\normalfont}
-% In the TOC formatting section of your options.sty
-\renewcommand{\cftchapdotsep}{\cftdotsep} % Adds dots for chapters
-% REMOVED: \renewcommand{\numberline}[1]{} -- This was causing the issue
+% \renewcommand{\cftchapdotsep}{\cftdotsep} % Adds dots for chapters
+% \renewcommand{\cftchappresnum}{} % Adds "chapter" before number
+% \renewcommand{\cftchapaftersnum}{}
+% \setlength{\cftchapnumwidth}{4em} % Adjust width as needed
+% \renewcommand{\cftdot}{.} % The character used for dots
+% \renewcommand{\cftdotsep}{3} % Spacing between dots
 
 %-------------------------------------------------------------------
 % QR codes with absolute positioning
@@ -174,12 +177,3 @@
 %-------------------------------------------------------------------
 % Ensure first paragraph is indented
 \usepackage{indentfirst}
-
-%-------------------------------------------------------------------
-% TOC formatting for chapter numbers
-\usepackage{tocloft}
-\renewcommand{\cftchappresnum}{}
-\renewcommand{\cftchapaftersnum}{}
-\setlength{\cftchapnumwidth}{4.5em} % Adjust width as needed
-\renewcommand{\cftdot}{.} % The character used for dots
-\renewcommand{\cftdotsep}{3} % Spacing between dots
