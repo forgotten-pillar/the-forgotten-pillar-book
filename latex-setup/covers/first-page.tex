@@ -6,8 +6,16 @@
 
 \begin{center}
     % Title at the top
+   % Use \ifdim to detect if the page width is smaller than a specific threshold
+    \ifdim \textwidth < 400pt
+    % If the page is narrow (e.g., mobile or small screen layout), use smaller font
+    {\fontsize{25}{24}\selectfont 
+    \parbox[c][3cm][c]{0.85\linewidth}{\centering \emcap{\booktitle}}}
+    \else
+    % For larger layouts, use the original font size
     {\fontsize{38}{48}\selectfont 
-    \parbox[c][3cm][c]{0.85\linewidth}{\centering \emcap{\booktitle}}} % Centers and controls title text balancing
+    \parbox[c][3cm][c]{0.85\linewidth}{\centering \emcap{\booktitle}}}
+    \fi
     
     \vspace{0.5cm}
     \rule{1in}{0.5pt}
