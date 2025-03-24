@@ -1,30 +1,46 @@
-% Página de copyright
+\clearpage % Osigurava da sadržaj na sljedećoj stranici počne na novoj stranici, ali izbjegava praznu stranicu
+%\null\par % Alternativa za izbjegavanje prazne stranice ako je potrebno
 
 {\small
-\setlength{\parindent}{0em}\setlength{\parskip}{1em}
-~
+\setlength{\parindent}{0em}\setlength{\parskip}{0.75em}
+
+{\large \emcap{\booktitle}}
+
+\emcap{Autori}: \textbf{\authorname} \\
+\ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Urednik}: \textbf{\editor{}}} \\ \fi\fi
+\ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Prevoditelj}: \textbf{\translatedby{}}} \\ \fi\fi
+\ifx\publisher\undefined\else\if\relax\detokenize\expandafter{\publisher}\relax\else{\emcap{Izdavač}: \textbf{\publisher{}}} \\ \fi\fi
+\ifx\publishingplace\undefined\else\if\relax\detokenize\expandafter{\publishingplace}\relax\else{\emcap{Mjesto i godina izdavanja}: \textbf{\publishingplace{}, \publishingyear{}}} \\ \fi\fi
+\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{\emcap{ISBN}: \textbf{\isbn{}}} \\ \fi\fi
+\emcap{Verzija}: \textbf{3.0.0} | \emcap{RD}: \textbf{20250324} \\
+\emcap{Izvor slika}: \textit{Ljubaznošću \href{https://ellenwhite.org/}{Ellen G. White Estate, Inc}}
+
 \vfill
 
-% Copyright
-Copyright \copyright{} 2025 \website
+% Sažetak licence
+\emcap{Licenca}: \ccby{} CC BY 4.0 \href{https://creativecommons.org/licenses/by/4.0/}{Autorstvo 4.0 Međunarodna}
 
-% Texto resumido da licença
-\textbf{Creative Common Attribution 4.0 International License}
+\textbf{Slobodno možete:} \\
+\textbf{Dijelite dalje} — možete umnažati i redistribuirati materijal u bilo kojem mediju ili formatu u bilo koju svrhu, pa i komercijalnu. \\
+\textbf{Stvarajte prerade} — možete remiksirati, mijenjati i prerađivati djelo u bilo koju svrhu, pa i komercijalnu.\\ 
 
-\textbf{You are free to:} \\
-\textbf{Share} — copy and redistribute the material in any medium or format \\
-\textbf{Adapt} — remix, transform, and build upon the material for any purpose, even commercially.
+\textbf{Pod sljedećim uvjetima:} \\
+\textbf{Imenovanje} — Morate adekvatno navesti autora, uvrstiti link na licencu i naznačiti eventualne izmjene. Možete to učiniti na bilo koji razuman način, ali ne smijete sugerirati da davatelj licence izravno podupire Vas ili Vaše korištenje djela. \\
+\textbf{Bez daljnjih ograničenja} — Ne smijete dodavati pravne uvjete ili tehnološke mjere zaštite koji će druge pravno ograničiti da čine ono što im licenca dopušta.
 
-\textbf{Under the following terms:} \\
-\textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-
-
-% ISBN, se houver
-\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{ISBN \isbn{}}\fi\fi
-
-% Logotipo da editora
-\includegraphics[width=0.21\linewidth]{images/logo-black.png}
-
-% Editora
-Published by \publisher{}
+% Kreirajte red s logotipom, tekstom i QR kodom
+\noindent
+\begin{minipage}{0.3\textwidth}
+    \includegraphics[width=\linewidth]{images/logo-black.png}
+\end{minipage}%
+\hfill
+\begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
+    \raggedleft\footnotesize
+    Ova knjiga je besplatno preuzeta na \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.125\textwidth}
+    \centering
+    \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
+\end{minipage}
 }

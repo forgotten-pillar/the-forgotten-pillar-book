@@ -6,24 +6,22 @@
 
 \begin{center}
     % Title at the top
-    {\fontsize{38}{48}\selectfont \booktitle}
+    {\fontsize{38}{48}\selectfont 
+    \parbox[c][3cm][c]{0.85\linewidth}{\centering \emcap{\booktitle}}} % Centers and controls title text balancing
     
-    \vspace{0.3cm}
-    \rule{3in}{0.5pt}
+    \vspace{0.5cm}
+    \rule{1in}{0.5pt}
     
     \vfill % Push the next content to the middle
 
     % Subtitle in the middle
-    {\Large \subtitle}
-    
-    \vspace{0.3cm}
-    \rule{2.5in}{0.5pt}
+    {\Large \parbox[c][2cm][c]{\linewidth}{\centering \subtitle}} % Centers and controls subtitle text balancing
     
     \vfill % Push the next content to the bottom
     
     % Author and publisher at the bottom
     {\large \authorname} \\
-    {\small \publisher \editionyear}
+    {\small \publisher, \editionyear}
 \end{center}
 
 \endgroup

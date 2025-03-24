@@ -3,29 +3,47 @@
 
 {\small
 \setlength{\parindent}{0em}\setlength{\parskip}{1em}
-~
+
+{\large \emcap{\booktitle}}
+
+\emcap{Authors}: \textbf{\authorname} \\
+\ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Editor}: \textbf{\editor{}}} \\ \fi\fi
+\ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Translated by}: \textbf{\translatedby{}}} \\ \fi\fi
+\ifx\publisher\undefined\else\if\relax\detokenize\expandafter{\publisher}\relax\else{\emcap{Publisher}: \textbf{\publisher{}}} \\ \fi\fi
+\ifx\publishingplace\undefined\else\if\relax\detokenize\expandafter{\publishingplace}\relax\else{\emcap{Publishing Place and Year}: \textbf{\publishingplace{}, \publishingyear{}}} \\ \fi\fi
+\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{\emcap{ISBN}: \textbf{\isbn{}}} \\ \fi\fi
+\emcap{Version}: \textbf{3.0.0} | \emcap{RD}: \textbf{20250324} \\
+\emcap{Images source}: \textit{Courtesy of the \href{https://ellenwhite.org/}{Ellen G. White Estate, Inc}}
+
 \vfill
 
-% Copyright
-Copyright \copyright{} 2025 \website
-
 % Texto resumido da licença
-\textbf{Creative Common Attribution 4.0 International License}
+\emcap{License}: \ccby{} \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
 
 \textbf{You are free to:} \\
 \textbf{Share} — copy and redistribute the material in any medium or format \\
 \textbf{Adapt} — remix, transform, and build upon the material for any purpose, even commercially.
 
 \textbf{Under the following terms:} \\
-\textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+\textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. \\
+\textbf{No additional restrictions} — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 
-% ISBN, se houver
-\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{ISBN \isbn{}}\fi\fi
-
-% Logotipo da editora
-\includegraphics[width=0.21\linewidth]{images/logo-black.png}
-
-% Editora
-Published by \publisher{}
+% Create a row with the logo, text, and QR code
+\noindent
+\begin{minipage}{0.3\textwidth}
+    \includegraphics[width=\linewidth]{images/logo-black.png}
+\end{minipage}%
+\hfill
+\begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
+    \raggedleft\footnotesize
+    This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.125\textwidth}
+    \centering
+    \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
+\end{minipage}
 }
+
+\pagebreak
