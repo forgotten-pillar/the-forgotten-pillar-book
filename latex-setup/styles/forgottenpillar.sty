@@ -119,3 +119,23 @@
   \subsubsection*{\raggedright #1}%
   \vspace{-1em} % Reduce the space after
 }
+
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{graphicx} % if you need it for other parts
+
+\newcommand{\DarkBoxText}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[
+      inner sep=15pt,
+      anchor=north west,
+      align=justify
+    ]
+    at ([xshift=0.075\paperwidth, yshift=-0.06\paperheight]current page.north west) {%
+      \color{white}%
+      \begin{adjustbox}{minipage=0.75\paperwidth, max width=0.75\paperwidth, max height=0.75\paperheight, center}
+        #1%
+      \end{adjustbox}%
+    };
+  \end{tikzpicture}%
+}
