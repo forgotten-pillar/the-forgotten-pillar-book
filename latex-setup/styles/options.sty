@@ -103,8 +103,8 @@
 \renewcommand{\headrulewidth}{0pt}
 
 % Fix for centering headers and footers on the physical page
-\fancyhfoffset[L]{\dimexpr\oddsidemargin+0.75in\relax}
-\fancyhfoffset[R]{\dimexpr\evensidemargin\relax}
+\fancyhfoffset[L]{0pt} % Remove excessive left offset
+\fancyhfoffset[R]{0pt} % Remove excessive right offset
 
 \fancyfoot[C]{\thepage} % Center the page number in the footer
 \fancyhead[CO]{\textsc{\leftmark}} % Chapter title on odd pages

@@ -13,14 +13,25 @@
 % Define a command for titled poems
 \newenvironment{titledpoem}
   {\poemseparator
-   \begin{verse}\itshape}
-  {\end{verse}}
+   \itshape
+   \ifdim\paperwidth<6in  % If paper width is smaller than 6in (mobile layout)
+     \setlength{\leftskip}{0pt}  % No indentation
+   \else
+     \setlength{\leftskip}{1em}  % Default indentation for larger screens
+   \fi
+   }
+  {}
 
-
-  \newcommand{\stanza}[1]{%
+% Define a command for each stanza
+\newcommand{\stanza}[1]{%
   \begingroup
-  \begin{minipage}{0.8\textwidth}
+  \ifdim\paperwidth<6in
+    \begin{minipage}{0.8\textwidth}  % Use full width for mobile layout
+  \else
+    \begin{minipage}{0.8\textwidth}  % Use smaller width for larger screens
+  \fi
     #1
   \end{minipage}
+  \vspace{0.75em}  % Add space between stanzas
   \endgroup
 }
