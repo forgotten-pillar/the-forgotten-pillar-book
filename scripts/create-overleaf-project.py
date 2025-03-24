@@ -48,9 +48,11 @@ def main():
             with open(main_tex_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Replace all occurrences of "lang/*/chapters" and "lang/*/frontmatter" with the selected language
-            pattern = r'lang/[^/]+/(content|frontmatter)'
-            replaced_content = re.sub(pattern, f'lang/{lang}/\\1', content)
+            import re
+
+            # Replace \def\currentlang{*} with \def\currentlang{[lang]}
+            pattern = r'\\def\\currentlang\{[^}]+\}'
+            replaced_content = re.sub(pattern, r'\\def\\currentlang{' + lang + '}', content)
             
             # Write the modified main.tex directly into the zip
             zipf.writestr('main.tex', replaced_content)
