@@ -144,8 +144,10 @@
 
 % QR code command for starred chapters using absolute positioning
 \newcommand{\qrchapterstar}[2]{%
-  % Place a marker at the current position
-  \tikz[remember picture] \node[coordinate] (chapter-start) {};%
+  % Don't force a new page at the beginning of mainmatter
+  \ifnum\value{page}=1\else
+    \clearpage  % Only create a new page if we're not already on page 1
+  \fi
   % Create the chapter
   \chapter*{#2}%
   % Place the QR code at fixed position from the top of the page
@@ -155,7 +157,6 @@
     };
   \end{tikzpicture}%
 }
-
 % Keep your existing chapter formatting
 \usepackage[center,sc]{titlesec}
 \renewcommand{\thechapter}{\Roman{chapter}}
