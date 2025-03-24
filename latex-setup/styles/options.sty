@@ -102,6 +102,10 @@
 \fancyhf{} % Clear all headers and footers
 \renewcommand{\headrulewidth}{0pt}
 
+% Fix for centering headers and footers on the physical page
+\fancyhfoffset[L]{\dimexpr\oddsidemargin+0.75in\relax}
+\fancyhfoffset[R]{\dimexpr\evensidemargin\relax}
+
 \fancyfoot[C]{\thepage} % Center the page number in the footer
 \fancyhead[CO]{\textsc{\leftmark}} % Chapter title on odd pages
 \fancyhead[CE]{\textsc{\booktitle}} % Book title on even pages
@@ -111,12 +115,12 @@
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\large\itshape}
 \renewcommand{\cftchappagefont}{\normalfont}
-% \renewcommand{\cftchapdotsep}{\cftdotsep} % Adds dots for chapters
-% \renewcommand{\cftchappresnum}{} % Adds "chapter" before number
-% \renewcommand{\cftchapaftersnum}{}
-% \setlength{\cftchapnumwidth}{4em} % Adjust width as needed
-% \renewcommand{\cftdot}{.} % The character used for dots
-% \renewcommand{\cftdotsep}{3} % Spacing between dots
+\renewcommand{\cftchapdotsep}{\cftdotsep} % Adds dots for chapters
+\renewcommand{\cftchappresnum}{} % Adds "chapter" before number
+\renewcommand{\cftchapaftersnum}{}
+\setlength{\cftchapnumwidth}{4em} % Adjust width as needed
+\renewcommand{\cftdot}{.} % The character used for dots
+\renewcommand{\cftdotsep}{3} % Spacing between dots
 
 %-------------------------------------------------------------------
 % QR codes with absolute positioning
