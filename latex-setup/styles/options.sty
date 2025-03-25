@@ -137,7 +137,10 @@
   % Place the QR code at fixed position from the top of the page
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=center] at (current page.north) [yshift=-3cm] {%
-      \qrcode[height=1.5cm]{#1}%
+      \ifepub
+      \else
+        \qrcode[height=1.5cm]{#1}%
+      \fi
     };
   \end{tikzpicture}%
 }
@@ -153,7 +156,10 @@
   % Place the QR code at fixed position from the top of the page
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=center] at (current page.north) [yshift=-3cm] {%
-      \qrcode[height=1.5cm]{#1}%
+      \ifepub
+      \else
+        \qrcode[height=1.5cm]{#1}%
+      \fi
     };
   \end{tikzpicture}%
 }

@@ -1,23 +1,26 @@
-% add two empty pages
-\newpage
-\thispagestyle{empty}
-\mbox{}
-\newpage
-\thispagestyle{empty}
-\mbox{}
+\ifepub
+\else
+  % add two empty pages
+  \newpage
+  \thispagestyle{empty}
+  \mbox{}
+  \newpage
+  \thispagestyle{empty}
+  \mbox{}
 
-% add full page image from cover based on current language and layout
-\begin{tikzpicture}[remember picture,overlay]
-  \node[inner sep=0pt] at (current page.center) {%
-    \includegraphics[width=\paperwidth,height=\paperheight]{images/covers/\currentlayout/back}%
-  };
-\end{tikzpicture}
+  % add full page image from cover based on current language and layout
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt] at (current page.center) {%
+      \includegraphics[width=\paperwidth,height=\paperheight]{images/covers/\currentlayout/back}%
+    };
+  \end{tikzpicture}
 
-\DarkBoxText{Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
+  \DarkBoxText{Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat.}
 
-% add qrcode at the bottom right corner
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=south east, xshift=-0.07\paperwidth, yshift=0.05\paperheight] at (current page.south east) {%
-    \textcolor{white}{\qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&format=\currentlayout}}%
-  };
-\end{tikzpicture}
+  % add qrcode at the bottom right corner
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south east, xshift=-0.07\paperwidth, yshift=0.05\paperheight] at (current page.south east) {%
+      \textcolor{white}{\qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&format=\currentlayout}}%
+    };
+  \end{tikzpicture}
+\fi
