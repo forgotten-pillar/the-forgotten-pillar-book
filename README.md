@@ -1,60 +1,112 @@
-## Translation Script
-Run command:
+# The Forgotten Pillar Book Project
 
-```
-python scripts/translation.py [target-lang] [chapter.tex]
-```
-For example, running `python scripts/translation.py es chapter30.tex` will translate chapter 30 from English to Spanish and store it in `lang/es/chapters/chapter30.tex`.
+## Project Overview
 
-- If the given chapter already exists, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
+A flexible LaTeX project for the Forgotten Pillar Book designed to support multiple languages and layouts with ease. This repository provides a comprehensive framework for book production, translation, and distribution.
 
-## Translation with Suggestions Script
-Translation with suggestions is useful for already translated content from the first edition of the book. The AI will consult the provided suggestions within the translation and follow them unless there is a discrepancy between the translation and the original English text.
+## Features
 
-Run command:
-```
-python scripts/translate-by-suggestions.py [target-lang] [chapter.tex]
-```
-- Suggestions must exist in `/lang/[target-lang]/suggestions/[chapter.txt]` with a `.txt` extension. If no suggestions are found, the script will exit.
-- If the given chapter already exists, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
+### Flexible Layouts
+The project supports 7 different layout variants:
+1. Book Print (`book-print`)
+2. ISO A4 (`iso-a4`)
+3. ISO A5 (`iso-a5`)
+4. Mobile Format (`mobile`)
+5. US Letter (`us-letter`)
+6. US Letter Half (`us-letter-half`)
+7. EPUB Converter (`epub`)
 
-## Fix Quotation Script
-Claude does not respect opening and closing quotation marks, instead outputting universal quotation marks. These do not look good with the Garamond font, so the quotation marks should be replaced. This is a very tedious manual process, but this script automates the correction.
+### Multi-Language Support
+- Currently supports languages: English (en), Croatian (hr), Polish (pl), French (fr), Swahili (sw), Spanish (es), Arabic (ar)
+- Easy language switching through configuration
 
-Run command:
-```
-python scripts/fix-quotations.py /lang/[target-lang]/chapters/[chapter.tex]
-```
-If the quotation marks need to be reversed, run:
-```
-python scripts/fix-quotations-back.py /lang/[target-lang]/chapters/[chapter.tex]
-```
-## Fix Grammar Script
-When a translation is completed, a grammar checker runs to detect possible grammar mistakes.
+## Prerequisites
 
-Run command:
-```
-python scripts/fix-grammar.py [target-lang] [chapter.tex]
-```
-- If grammar suggestions for the given chapter already exist, the script will prevent overwriting unless the third optional parameter `overwrite` is provided.
+### LaTeX Requirements
+- TeXLive (recommended) or MacTeX
+- `tex4ebook` for EPUB conversion
+- `latexmk` for PDF compilation
+- LaTeX Workshp VS extension (optional)
 
-## Create Overleaf Project
-There is a free LaTeX setup available at [Overleaf](https://overleaf.com). A script is available to prepare an entire project for Overleaf in the given language.
+### Python Scripts Requirements
+- Python 3.8+
+- `anthropic` library
+- `pyyaml`
+- `python-dotenv`
+- A Claude AI API key for translation scripts
 
-Run command:
-```
-python scripts/create-overleaf-project.py [target-lang]
-```
-- This will output a ZIP file that can be imported into Overleaf.
+## Installation
 
-## Fix Links Script
-The old manuscript contains old egwwritings.org link structure. It should be updated to the new structure. Running this script for each chapter will convert the links into the new structure. If it is possible to get redirected links, then it will query egwwritings.org, if not it will check for the manual mapping stored in `/lang/scripts/links.yaml` file.
-
-Run command:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-organization/forgotten-pillar.git
+cd forgotten-pillar
 ```
-python scripts/fix-links.py [target-lang] [chapter.tex]
-```
-- This will update each chapter with the correct links towards egwwritings.org
 
-## Overleaf compilation troubleshooting workflow
-[overleaf troubleshooting](https://drive.google.com/file/d/1KfBPEE30SdzK2yIF_Rw96tcutAzT6_29/view?usp=sharing)
+### 2. Install LaTeX Dependencies
+- Install TeXLive from [https://tug.org/texlive/](https://tug.org/texlive/)
+- Ensure `tex4ebook` is installed (usually part of TeXLive)
+
+### 3. Install Python Dependencies
+```bash
+pip install anthropic pyyaml python-dotenv
+```
+
+## Configuration and Usage
+
+### Changing Language and Layout
+In `main.tex`, you can easily switch language and layout:
+
+```latex
+\def\currentlang{en}     % Language code
+\def\currentlayout{book-print}  % Layout variant
+```
+
+### PDF Compilation
+```bash
+latexmk main.tex  # Compile PDF
+```
+
+### EPUB Conversion
+```bash
+tex4ebook -B epub/output -d epub -c epub/config.cfg main.tex
+```
+
+## Translation Workflow
+
+### Automatic Translation
+Use the provided Python scripts in the `scripts/` directory to:
+- Create Overleaf projects
+- Translate chapters using AI
+- Manage translation suggestions
+
+### Translation Script Usage
+```bash
+# Translate a chapter to a specific language
+python scripts/translation.py pl chapter01.tex
+```
+
+## Project Structure
+- `lang/`: Language-specific content
+- `latex-setup/`: LaTeX configuration and styles
+- `scripts/`: Utility scripts for project management
+- `images/`: Project images and graphics
+- `epub/`: EPUB conversion configuration
+
+## Contribution Guidelines
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push and create a pull request
+
+## License
+[Specify your project's license]
+
+## Contact
+Michael Presecan
+- Website: [forgottenpillar.com](https://forgottenpillar.com)
+- GitHub: [@forgotten-pillar](https://github.com/forgotten-pillar)
+
+## Notes
+- Ensure you have an active Claude AI API key for translation scripts
+- Always test compilations in different layouts and languages
