@@ -1,33 +1,33 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Introduction}{1}{chapter*.2}%
-\contentsline {chapter}{\numberline {I}The Foundation of Our Faith}{17}{chapter.1}%
-\contentsline {chapter}{\numberline {II}The Fundamental Principles}{47}{chapter.2}%
-\contentsline {chapter}{\numberline {III}The historical context}{68}{chapter.3}%
-\contentsline {chapter}{\numberline {IV}Revision of “Living Temple”}{82}{chapter.4}%
-\contentsline {chapter}{\numberline {V}The patchwork theories - Lt253-1903}{98}{chapter.5}%
-\contentsline {chapter}{\numberline {VI}Examining the test}{145}{chapter.6}%
-\contentsline {chapter}{\numberline {VII}The authority of the Fundamental Principles}{162}{chapter.7}%
-\contentsline {chapter}{\numberline {VIII}The constructive criticism}{183}{chapter.8}%
-\contentsline {chapter}{\numberline {IX}The proper solution}{210}{chapter.9}%
-\contentsline {chapter}{\numberline {X}Is God a person? - by John N. Loughborough}{217}{chapter.10}%
-\contentsline {chapter}{\numberline {XI}The personality of God - by James S. White}{244}{chapter.11}%
-\contentsline {chapter}{\numberline {XII}Heaven's reality}{274}{chapter.12}%
-\contentsline {chapter}{\numberline {XIII}The Sabbath God vs. Sunday God - J. B. Frisbie}{286}{chapter.13}%
-\contentsline {chapter}{\numberline {XIV}Adventist pioneers and the Trinity doctrine}{303}{chapter.14}%
-\contentsline {chapter}{\numberline {XV}Dr. Kellogg and the Trinity doctrine}{336}{chapter.15}%
-\contentsline {chapter}{\numberline {XVI}Dr. Kellogg and pantheism}{377}{chapter.16}%
-\contentsline {chapter}{\numberline {XVII}Reply to Kellogg’s trinitarian sentiments}{397}{chapter.17}%
-\contentsline {chapter}{\numberline {XVIII}The Heavenly Trio}{411}{chapter.18}%
-\contentsline {chapter}{\numberline {XIX}Ellen White and Matthew 28:19}{458}{chapter.19}%
-\contentsline {chapter}{\numberline {XX}Dr. Kellogg and Ellen White writings}{482}{chapter.20}%
-\contentsline {chapter}{\numberline {XXI}Remembering the beginning}{496}{chapter.21}%
-\contentsline {chapter}{\numberline {XXII}The bottom of the issue}{519}{chapter.22}%
-\contentsline {chapter}{\numberline {XXIII}The great apostasy is soon to be realized}{549}{chapter.23}%
-\contentsline {chapter}{\numberline {XXIV}The future of the Fundamental Principles}{566}{chapter.24}%
-\contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{578}{chapter.25}%
-\contentsline {chapter}{\numberline {XXVI}The steps to Omega}{592}{chapter.26}%
-\contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{627}{chapter.27}%
-\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{647}{chapter.28}%
-\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{664}{chapter.29}%
-\contentsline {chapter}{\numberline {XXX}The final call}{690}{chapter.30}%
-\contentsline {chapter}{Appendix}{704}{chapter*.24}%
+\contentsline {chapter}{\numberline {I}The Foundation of Our Faith}{8}{chapter.1}%
+\contentsline {chapter}{\numberline {II}The Fundamental Principles}{21}{chapter.2}%
+\contentsline {chapter}{\numberline {III}The historical context}{31}{chapter.3}%
+\contentsline {chapter}{\numberline {IV}Revision of “Living Temple”}{38}{chapter.4}%
+\contentsline {chapter}{\numberline {V}The patchwork theories - Lt253-1903}{46}{chapter.5}%
+\contentsline {chapter}{\numberline {VI}Examining the test}{65}{chapter.6}%
+\contentsline {chapter}{\numberline {VII}The authority of the Fundamental Principles}{72}{chapter.7}%
+\contentsline {chapter}{\numberline {VIII}The constructive criticism}{81}{chapter.8}%
+\contentsline {chapter}{\numberline {IX}The proper solution}{93}{chapter.9}%
+\contentsline {chapter}{\numberline {X}Is God a person? - by John N. Loughborough}{96}{chapter.10}%
+\contentsline {chapter}{\numberline {XI}The personality of God - by James S. White}{108}{chapter.11}%
+\contentsline {chapter}{\numberline {XII}Heaven's reality}{121}{chapter.12}%
+\contentsline {chapter}{\numberline {XIII}The Sabbath God vs. Sunday God - J. B. Frisbie}{127}{chapter.13}%
+\contentsline {chapter}{\numberline {XIV}Adventist pioneers and the Trinity doctrine}{135}{chapter.14}%
+\contentsline {chapter}{\numberline {XV}Dr. Kellogg and the Trinity doctrine}{149}{chapter.15}%
+\contentsline {chapter}{\numberline {XVI}Dr. Kellogg and pantheism}{168}{chapter.16}%
+\contentsline {chapter}{\numberline {XVII}Reply to Kellogg’s trinitarian sentiments}{177}{chapter.17}%
+\contentsline {chapter}{\numberline {XVIII}The Heavenly Trio}{183}{chapter.18}%
+\contentsline {chapter}{\numberline {XIX}Ellen White and Matthew 28:19}{204}{chapter.19}%
+\contentsline {chapter}{\numberline {XX}Dr. Kellogg and Ellen White writings}{214}{chapter.20}%
+\contentsline {chapter}{\numberline {XXI}Remembering the beginning}{220}{chapter.21}%
+\contentsline {chapter}{\numberline {XXII}The bottom of the issue}{231}{chapter.22}%
+\contentsline {chapter}{\numberline {XXIII}The great apostasy is soon to be realized}{243}{chapter.23}%
+\contentsline {chapter}{\numberline {XXIV}The future of the Fundamental Principles}{251}{chapter.24}%
+\contentsline {chapter}{\numberline {XXV}Setting up the wrong Fundamental Principles}{257}{chapter.25}%
+\contentsline {chapter}{\numberline {XXVI}The steps to Omega}{263}{chapter.26}%
+\contentsline {chapter}{\numberline {XXVII}Steps to apostasy}{277}{chapter.27}%
+\contentsline {chapter}{\numberline {XXVIII}The prophetic call for a renewal of the old pillars}{285}{chapter.28}%
+\contentsline {chapter}{\numberline {XXIX}Remembering His teaching in our past history}{292}{chapter.29}%
+\contentsline {chapter}{\numberline {XXX}The final call}{303}{chapter.30}%
+\contentsline {chapter}{Appendix}{309}{chapter*.24}%

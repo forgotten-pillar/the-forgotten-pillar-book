@@ -8,7 +8,7 @@
 % Define language and layout variables directly in main.tex
 % ---- THIS IS THE PLACE TO CHANGE THE LANGUAGE AND LAYOUT ----
 \def\currentlang{en} % currently: en, hr, pl, fr, sw, es
-\def\currentlayout{mobile} % all options: book-print, iso-a4, iso-a5, mobile, us-letter, us-letter-half
+\def\currentlayout{iso-a5} % all options: book-print, iso-a4, iso-a5, mobile, us-letter, us-letter-half
 
 % Book information
 \newcommand{\authorname}{Michael Presečan \& Marjan Gerguri}
@@ -34,8 +34,12 @@
 
 \begin{document}
 % Include covers based on language and layout
-\input{latex-setup/covers/front}
+\ifdefined\HCode
+    \input{latex-setup/covers/front}
+\fi
 \input{latex-setup/covers/first-page}
 \input{lang/\currentlang/content}
-\input{latex-setup/covers/back}
+\ifdefined\HCode
+    \input{latex-setup/covers/back}
+\fi
 \end{document}

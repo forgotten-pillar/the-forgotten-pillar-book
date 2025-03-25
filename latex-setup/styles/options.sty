@@ -135,11 +135,13 @@
   % Create the chapter
   \chapter{#2}%
   % Place the QR code at fixed position from the top of the page
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=center] at (current page.north) [yshift=-3cm] {%
-      \qrcode[height=1.5cm]{#1}%
-    };
-  \end{tikzpicture}%
+  \ifdefined\HCode
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.north) [yshift=-3cm] {%
+        \qrcode[height=1.5cm]{#1}%
+      };
+    \end{tikzpicture}%
+  \fi
 }
 
 % QR code command for starred chapters using absolute positioning
@@ -150,12 +152,14 @@
   \fi
   % Create the chapter
   \chapter*{#2}%
-  % Place the QR code at fixed position from the top of the page
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=center] at (current page.north) [yshift=-3cm] {%
-      \qrcode[height=1.5cm]{#1}%
-    };
-  \end{tikzpicture}%
+  \ifdefined\HCode
+    % Place the QR code at fixed position from the top of the page
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.north) [yshift=-3cm] {%
+        \qrcode[height=1.5cm]{#1}%
+      };
+    \end{tikzpicture}%
+  \fi
 }
 % Keep your existing chapter formatting
 \usepackage[center,sc]{titlesec}
