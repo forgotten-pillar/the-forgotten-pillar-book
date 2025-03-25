@@ -1,0 +1,57 @@
+\clearpage % Ensures the next content starts on a new page, but avoids an extra blank page
+%\null\par % Alternative to avoid an empty page if needed
+
+{\small
+\setlength{\parindent}{0em}\setlength{\parskip}{1em}
+
+{\large \emcap{\booktitle}}
+
+\emcap{Authors}: \textbf{\authorname} \\
+\ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Editor}: \textbf{\editor{}}} \\ \fi\fi
+\ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Translated by}: \textbf{\translatedby{}}} \\ \fi\fi
+\ifx\publisher\undefined\else\if\relax\detokenize\expandafter{\publisher}\relax\else{\emcap{Publisher}: \textbf{\publisher{}}} \\ \fi\fi
+\ifx\publishingplace\undefined\else\if\relax\detokenize\expandafter{\publishingplace}\relax\else{\emcap{Publishing Place and Year}: \textbf{\publishingplace{}, \publishingyear{}}} \\ \fi\fi
+\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{\emcap{ISBN}: \textbf{\isbn{}}} \\ \fi\fi
+\emcap{Version}: \textbf{3.0.0} | \emcap{RD}: \textbf{20250324} \\
+\emcap{Images source}: \textit{Courtesy of the \href{https://ellenwhite.org/}{Ellen G. White Estate, Inc}}
+
+\vfill
+
+% Texto resumido da licença
+\emcap{License}: \ifepub\else\ccby{}\fi \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
+
+\textbf{You are free to:} \\
+\textbf{Share} — copy and redistribute the material in any medium or format \\
+\textbf{Adapt} — remix, transform, and build upon the material for any purpose, even commercially.
+
+\textbf{Under the following terms:} \\
+\textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. \\
+\textbf{No additional restrictions} — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+\ifepub
+    \includegraphics[width=\linewidth]{images/logo-black.png}
+
+    This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+\else
+    % Create a row with the logo, text, and QR code
+    \noindent
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/logo-black.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.125\textwidth-1em\relax}
+        \raggedleft\footnotesize
+        This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}{www.forgottenpillar.com}
+    \end{minipage}%
+    \ifnum\pdfstrcmp{\currentlayout}{mobile}=0
+    \else
+        \hfill
+        \begin{minipage}{0.125\textwidth}
+            \centering
+            \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}
+        \end{minipage}
+    \fi%
+\fi
+}
+
+\pagebreak
