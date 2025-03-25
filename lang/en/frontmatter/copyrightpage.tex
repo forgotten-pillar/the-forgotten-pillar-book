@@ -39,15 +39,18 @@
         \includegraphics[width=\linewidth]{images/logo-black.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
+    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.125\textwidth-1em\relax}
         \raggedleft\footnotesize
-        This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+        This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}{www.forgottenpillar.com}
     \end{minipage}%
-    \hfill
-    \begin{minipage}{0.125\textwidth}
-        \centering
-        \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
-    \end{minipage}
+    \ifnum\pdfstrcmp{\currentlayout}{mobile}=0
+    \else
+        \hfill
+        \begin{minipage}{0.125\textwidth}
+            \centering
+            \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}
+        \end{minipage}
+    \fi%
 \fi
 }
 
