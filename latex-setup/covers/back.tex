@@ -11,14 +11,14 @@
   % add full page image from cover based on current language and layout
   \begin{tikzpicture}[remember picture,overlay]
     \node[inner sep=0pt] at (current page.center) {%
-      \includegraphics[width=\paperwidth,height=\paperheight]{images/covers/\currentlayout/back}%
+      \includegraphics[width=\paperwidth,height=\paperheight]{lang/\currentlang/covers/\currentlayout/back}%
     };
   \end{tikzpicture}
 
   % add qrcode at the bottom right corner
   \begin{tikzpicture}[remember picture, overlay]
     \node[anchor=south east, xshift=-0.07\paperwidth, yshift=0.05\paperheight] at (current page.south east) {%
-      \textcolor{white}{\qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&format=\currentlayout}}%
+      \textcolor{white}{\qrcode[height=\qrcodesize]{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&format=\currentlayout}}%
     };
   \end{tikzpicture}
 \fi
