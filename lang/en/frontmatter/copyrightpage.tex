@@ -18,7 +18,7 @@
 \vfill
 
 % Texto resumido da licença
-\emcap{License}: \ccby{} \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
+\emcap{License}: \ifepub\else\ccby{}\fi \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
 
 \textbf{You are free to:} \\
 \textbf{Share} — copy and redistribute the material in any medium or format \\
@@ -28,22 +28,27 @@
 \textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. \\
 \textbf{No additional restrictions} — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
-
-% Create a row with the logo, text, and QR code
-\noindent
-\begin{minipage}{0.3\textwidth}
+\ifepub
     \includegraphics[width=\linewidth]{images/logo-black.png}
-\end{minipage}%
-\hfill
-\begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
-    \raggedleft\footnotesize
+
     This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
-\end{minipage}%
-\hfill
-\begin{minipage}{0.125\textwidth}
-    \centering
-    \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
-\end{minipage}
+\else
+    % Create a row with the logo, text, and QR code
+    \noindent
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/logo-black.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
+        \raggedleft\footnotesize
+        This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.125\textwidth}
+        \centering
+        \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
+    \end{minipage}
+\fi
 }
 
 \pagebreak

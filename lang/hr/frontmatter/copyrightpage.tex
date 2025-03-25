@@ -18,7 +18,7 @@
 \vfill
 
 % Sažetak licence
-\emcap{Licenca}: \ccby{} CC BY 4.0 \href{https://creativecommons.org/licenses/by/4.0/}{Autorstvo 4.0 Međunarodna}
+\emcap{Licenca}: \ifepub\else\ccby{}\fi  CC BY 4.0 \href{https://creativecommons.org/licenses/by/4.0/}{Autorstvo 4.0 Međunarodna}
 
 \textbf{Slobodno možete:} \\
 \textbf{Dijelite dalje} — možete umnažati i redistribuirati materijal u bilo kojem mediju ili formatu u bilo koju svrhu, pa i komercijalnu. \\
@@ -28,19 +28,27 @@
 \textbf{Imenovanje} — Morate adekvatno navesti autora, uvrstiti link na licencu i naznačiti eventualne izmjene. Možete to učiniti na bilo koji razuman način, ali ne smijete sugerirati da davatelj licence izravno podupire Vas ili Vaše korištenje djela. \\
 \textbf{Bez daljnjih ograničenja} — Ne smijete dodavati pravne uvjete ili tehnološke mjere zaštite koji će druge pravno ograničiti da čine ono što im licenca dopušta.
 
-% Kreirajte red s logotipom, tekstom i QR kodom
-\noindent
-\begin{minipage}{0.3\textwidth}
+\ifepub
     \includegraphics[width=\linewidth]{images/logo-black.png}
-\end{minipage}%
-\hfill
-\begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
-    \raggedleft\footnotesize
+
     Ova knjiga je besplatno preuzeta sa \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
-\end{minipage}%
-\hfill
-\begin{minipage}{0.125\textwidth}
-    \centering
-    \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
-\end{minipage}
+\else
+    % Kreirajte red s logotipom, tekstom i QR kodom
+    \noindent
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/logo-black.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.2\textwidth-1em\relax}
+        \raggedleft\footnotesize
+        Ova knjiga je besplatno preuzeta sa \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.125\textwidth}
+        \centering
+        \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar}
+    \end{minipage}
+\fi
 }
+
+\pagebreak

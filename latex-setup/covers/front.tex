@@ -1,11 +1,9 @@
-\ifepub
-\else
-  \pagestyle{empty}
+\pagestyle{empty}
 
-  % add full page image from cover book print front
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[inner sep=0pt] at (current page.center) {%
-      \includegraphics[width=\paperwidth,height=\paperheight]{lang/\currentlang/covers/\currentlayout/front.jpg}%
-    };
-  \end{tikzpicture}
-\fi
+% add full page image from cover book print front
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {% 
+    % \includegraphics[width=\paperwidth,height=\paperheight]{lang/\currentlang/covers/\currentlayout/front.jpg}%
+    \coverimage{lang/\currentlang/covers/\currentlayout/front.jpg}
+  };
+\end{tikzpicture}

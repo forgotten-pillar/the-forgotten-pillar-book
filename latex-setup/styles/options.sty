@@ -27,8 +27,9 @@
 \usetikzlibrary{positioning}
 
 % Graphics
-\usepackage{graphicx}
 \usepackage{caption}
+% \documentclass{report}
+\usepackage{titlepic}
 
 \captionsetup{font=footnotesize}
 
@@ -139,7 +140,7 @@
     \node[anchor=center] at (current page.north) [yshift=-3cm] {%
       \ifepub
       \else
-        \qrcode[height=1.5cm]{#1}%
+        \qrcode[height=\qrcodesize]{#1}%
       \fi
     };
   \end{tikzpicture}%
@@ -158,7 +159,7 @@
     \node[anchor=center] at (current page.north) [yshift=-3cm] {%
       \ifepub
       \else
-        \qrcode[height=1.5cm]{#1}%
+        \qrcode[height=\qrcodesize]{#1}%
       \fi
     };
   \end{tikzpicture}%
@@ -191,3 +192,6 @@
 
 %-------------------------------------------------------------------
 \usepackage{ccicons} % Creative Commons icons
+
+%-------------------------------------------------------------------
+\usepackage{tex4ebook}

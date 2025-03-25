@@ -2,13 +2,27 @@
 % 2025 (c) Michael Presecan
 % See more <forgottenpillar.com> or <github.com/forgotten-pillar>
 
-% paper size is in preamble.sty
-\documentclass[12pt,openany]{book}
 
 % Define language and layout variables directly in main.tex
 % ---- THIS IS THE PLACE TO CHANGE THE LANGUAGE AND LAYOUT ----
-\def\currentlang{en} % currently: en, hr, pl, fr, sw, es
-\def\currentlayout{iso-a5} % all options: book-print, iso-a4, iso-a5, mobile, us-letter, us-letter-half
+\def\currentlang{hr} % currently: en, hr, pl, fr, sw, es
+\def\currentlayout{iso-a4} % all options: book-print, iso-a4, iso-a5, mobile, us-letter, us-letter-half
+
+% Pre-calculate the font size into a macro
+\edef\myfontsize{%
+  \ifnum\pdfstrcmp{\currentlayout}{iso-a4}=0 14pt\else
+    \ifnum\pdfstrcmp{\currentlayout}{us-letter}=0 14pt\else 12pt\fi
+  \fi%
+}
+
+% Pre-calculate the qr code size into a macro
+\edef\qrcodesize{%
+  \ifnum\pdfstrcmp{\currentlayout}{iso-a4}=0 2.5cm\else
+    \ifnum\pdfstrcmp{\currentlayout}{us-letter}=0 2.5cm\else 1.5cm\fi
+  \fi%
+}
+
+\documentclass[\myfontsize,openany]{extbook}
 
 % Book information
 \newcommand{\authorname}{Michael Presečan \& Marjan Gerguri}
@@ -32,6 +46,7 @@
 
 \title{\booktitle}
 \author{\authorname}
+\titlepic{\includegraphics[width=\textwidth]{lang/\currentlang/covers/\currentlayout/front.jpg}} 
 
 \begin{document}
 % Include covers based on language and layout
