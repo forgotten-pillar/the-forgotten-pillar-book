@@ -1,8 +1,10 @@
 ## Steps to create epub
 
-1. In main.tex define language and for layout choose "print-book"
+1. In main.tex define language and for layout choose "book-print"
 
-2. in config.cfg change language path for the cover image
+2. In config.cfg change language path for the cover image
+
+3. Compile PDF. If successfull, then...
 
 3: Run:
 
