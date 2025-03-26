@@ -161,7 +161,7 @@ def process_latex_file(input_file, output_dir, client):
     system_prompt_config_file = os.path.join(os.path.dirname(output_dir), "config.yaml")
     system_prompt = generate_system_prompt(system_prompt_config_file)
     target_lang = get_config_value(system_prompt_config_file, "language")
-    print(f"System prompt: {system_prompt}")
+    # print(f"System prompt: {system_prompt}")
 
     paragraphs = split_into_paragraphs(content)
     translated_content = []
@@ -251,7 +251,7 @@ def main():
         if os.path.exists(output_file):
             print(f"Skipping '{chapter_file}' (already translated).")
             continue
-        
+
         print(f"[{i}/{total}] Translating '{chapter_file}'...")
         process_latex_file(input_file, output_dir, client)
         print(f"Done: '{chapter_file}'")
