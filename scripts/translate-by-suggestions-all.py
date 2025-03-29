@@ -269,7 +269,7 @@ def main():
         suggestion_file = os.path.join(suggestions_dir, chapter_file.replace(".tex", ".txt"))
         output_file = os.path.join(output_dir, chapter_file)
 
-        if not os.path.exists(output_file):
+        if os.path.exists(output_file):
             print(f"Skipping '{chapter_file}': already translated.")
             continue
 
