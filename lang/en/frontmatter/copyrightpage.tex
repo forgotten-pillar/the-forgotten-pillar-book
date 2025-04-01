@@ -12,22 +12,17 @@
 \ifx\publisher\undefined\else\if\relax\detokenize\expandafter{\publisher}\relax\else{\emcap{Publisher}: \textbf{\publisher{}}} \\ \fi\fi
 \ifx\publishingplace\undefined\else\if\relax\detokenize\expandafter{\publishingplace}\relax\else{\emcap{Publishing Place and Year}: \textbf{\publishingplace{}, \publishingyear{}}} \\ \fi\fi
 \ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{\emcap{ISBN}: \textbf{\isbn{}}} \\ \fi\fi
-\emcap{Version}: \textbf{3.0.0} | \emcap{RD}: \textbf{20250324} \\
+\emcap{Version}: \textbf{3.0.1} | \emcap{RD}: \textbf{20250401} \\
+\ifx\publishingplacefirstedition\undefined\else\if\relax\detokenize\expandafter
+{\publishingplacefirstedition}\relax\else{\emcap{First Edition Published}: \textbf{\publishingplacefirstedition{}, \publishingyearfirstedition{}}} \\ \fi\fi
+\ifx\isbnfirstedition\undefined\else\if\relax\detokenize\expandafter{\isbnfirstedition}\relax\else{\emcap{ISBN (First Edition)}: \textbf{\isbnfirstedition{}}} \\ \fi\fi
 \ifx\poems\undefined\else\if\relax\detokenize\expandafter{\poems}\relax\else{\emcap{Poems}: Courtesy of \textbf{\poems{}}} \\ \fi\fi
 \emcap{Images source}: \textit{Courtesy of the \href{https://ellenwhite.org/}{Ellen G. White Estate, Inc}}
 
 \vfill
 
-% Texto resumido da licença
-\emcap{License}: \ifepub\else\ccby{}\fi \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
-
-\textbf{You are free to:} \\
-\textbf{Share} — copy and redistribute the material in any medium or format \\
-\textbf{Adapt} — remix, transform, and build upon the material for any purpose, even commercially.
-
-\textbf{Under the following terms:} \\
-\textbf{Attribution} — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. \\
-\textbf{No additional restrictions} — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+% License text
+{\licensesize \licensetext}
 
 \ifepub
     \includegraphics[width=\linewidth]{images/logo-black.png}

@@ -10,8 +10,8 @@
 
 % Pre-calculate the font size into a macro
 \edef\myfontsize{%
-  \ifnum\pdfstrcmp{\currentlayout}{iso-a4}=0 14pt\else
-    \ifnum\pdfstrcmp{\currentlayout}{us-letter}=0 14pt\else 12pt\fi
+  \ifnum\pdfstrcmp{\currentlayout}{iso-a4}=0 17pt\else
+    \ifnum\pdfstrcmp{\currentlayout}{us-letter}=0 17pt\else 12pt\fi
   \fi%
 }
 
@@ -21,6 +21,17 @@
     \ifnum\pdfstrcmp{\currentlayout}{us-letter}=0 2.5cm\else 1.5cm\fi
   \fi%
 }
+
+% Pre-calculate the license size into a macro
+\ifnum\pdfstrcmp{\currentlayout}{us-letter-half}=0
+  \def\licensesize{\footnotesize}
+\else
+  \ifnum\pdfstrcmp{\currentlayout}{iso-a5}=0
+    \def\licensesize{\footnotesize}
+  \else
+    \def\licensesize{\small}
+  \fi
+\fi
 
 \documentclass[\myfontsize,openany]{extbook}
 
