@@ -5,6 +5,63 @@
 \newcommand{\subtitle}{Ponowne Odkrywanie Adwentystycznej Tożsamości}
 \newcommand{\publisher}{}
 \newcommand{\isbn}{}
+\newcommand{\editor}{}
 \newcommand{\translatedby}{Hanna Gerlach}
 \newcommand{\publishingplace}{}
 \newcommand{\publishingyear}{}
+\newcommand{\publishingplacefirstedition}{}
+\newcommand{\publishingyearfirstedition}{}
+\newcommand{\isbnfirstedition}{}
+\newcommand{\poems}{}
+
+
+\newcommand{\licensetext}{%
+  \emcap{License}: \ifepub\else\ccby{}\fi \href{https://creativecommons.org/licenses/by/4.0/}{Creative Common Attribution 4.0 International License}
+
+  \textbf{Wolno:} \\
+  \textbf{Dzielenie się} — kopiuj i rozpowszechniaj utwór w dowolnym medium i formacie dla dowolnego celu, także komercyjnego. \\
+  \textbf{Adaptacje} — remiksuj, zmieniaj i twórz na bazie utworu dla dowolnego celu, także komercyjnego.
+
+  \textbf{Na następujących warunkach:} \\
+  \textbf{Uznanie autorstwa} — Utwór należy odpowiednio oznaczyć , podać link do licencji i wskazać jeśli zostały dokonane w nim zmiany . Możesz to zrobić w dowolny, rozsądny sposób, o ile nie sugeruje to udzielania prze licencjodawcę poparcia dla Ciebie lub sposobu, w jaki wykorzystujesz ten utwór. \\
+  \textbf{Brak dodatkowych ograniczeń} — Nie możesz korzystać ze środków prawnych lub technologicznych , które ograniczają innych w korzystaniu z utworu na warunkach określonych w licencji.
+}
+
+% New command with footnote reference
+\NewDocumentCommand{\othersnodot}{m o o}{%
+    \noindent%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{others}\textit{„#1”}}%
+    % Second argument (optional) - the reference as footnote
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the footnote reference a hyperlink
+        \IfValueTF{#3}{%
+            \footnote{\href{#3}{#2}}%
+        }{%
+            \footnote{#2}%
+        }%
+    }%
+}
+
+% Define the main command with one mandatory and two optional arguments
+\NewDocumentCommand{\egwnodot}{m o o}{%
+    \noindent%
+    % First argument (mandatory) - the quote text in egwcolor and italic with quotes
+    {\color{egwcolor}\textit{„#1”}}%
+    % Second argument (optional) - the reference in smaller font with visible braces
+    \IfValueT{#2}{%
+        % If there's a third argument (URL), make the reference a hyperlink
+        \IfValueTF{#3}{%
+            % With URL: reference is a hyperlink with smaller font and visible braces
+            { \footnotesize\{{\href{#3}{EGW; #2}}\}}%
+        }{%
+            % Without URL: just the reference in smaller font with visible braces
+            { \footnotesize\{{EGW; #2}\}}%
+        }%
+    }%
+}
+
+\NewDocumentCommand{\egwnodotnogap}{m o o}{%
+    \vspace{-\parskip}% Remove the extra vertical space
+    \egwnodot{#1}[#2][#3]
+}
