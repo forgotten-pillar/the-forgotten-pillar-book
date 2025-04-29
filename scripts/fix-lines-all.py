@@ -23,13 +23,11 @@ def fix_latex_lines(content):
     
     return fixed_content
 
-def process_latex_file(input_file, output_dir):
+def process_latex_file(input_file):
     content = read_latex_file(input_file)
-    output_file = os.path.join(output_dir, os.path.basename(input_file))
-   
     fixed_content = fix_latex_lines(content)
 
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(input_file, 'w', encoding='utf-8') as f:
         f.write(fixed_content)
 
 def main():
@@ -44,20 +42,15 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.abspath(os.path.join(script_dir, ".."))
 
-    # Define input/output directories
+    # Define input directory
     input_dir = os.path.join(root_dir, "lang", target_lang_code, "chapters")
-    output_dir = os.path.join(root_dir, "lang", target_lang_code, "chapters_fixed")
-    
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
     
     # Validate input directory
     if not os.path.exists(input_dir):
         sys.exit(f"Error: Input directory '{input_dir}' does not exist.")
     
     # Get all .tex files
-    all_files = sorted([f for f in os.listdir(input_dir) if f.endswith(".tex")])
-    files_to_process = [f for f in all_files if not os.path.exists(os.path.join(output_dir, f))]
+    files_to_process = sorted([f for f in os.listdir(input_dir) if f.endswith(".tex")])
 
     total = len(files_to_process)
     if total == 0:
@@ -70,7 +63,7 @@ def main():
         input_file = os.path.join(input_dir, chapter_file)
 
         print(f"[{i}/{total}] Fixing '{chapter_file}'...")
-        process_latex_file(input_file, output_dir)
+        process_latex_file(input_file)
         print(f"Done: '{chapter_file}'")
 
     print("Fixing lines complete.")
