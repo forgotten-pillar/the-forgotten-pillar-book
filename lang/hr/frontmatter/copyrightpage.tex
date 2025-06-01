@@ -6,6 +6,7 @@
 
 {\large \emcap{\booktitle}}
 
+\ifx\originaltitle\undefined\else\if\relax\detokenize\expandafter{\originaltitle}\relax\else{\emcap{Originalni naslov}: \textbf{\originaltitle{}}} \\ \fi\fi
 \emcap{Autori}: \textbf{\authorname} \\
 \ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Urednik}: \textbf{\editor{}}} \\ \fi\fi
 \ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Prevoditelj}: \textbf{\translatedby{}}} \\ \fi\fi

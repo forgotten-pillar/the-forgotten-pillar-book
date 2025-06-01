@@ -6,6 +6,7 @@
 
 {\large \emcap{\booktitle}}
 
+\ifx\originaltitle\undefined\else\if\relax\detokenize\expandafter{\originaltitle}\relax\else{\emcap{Oryginalny tytuł}: \textbf{\originaltitle{}}} \\ \fi\fi
 \emcap{Autorzy}: \textbf{\authorname} \\
 \ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Redaktor}: \textbf{\editor{}}} \\ \fi\fi
 \ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Tłumaczenie}: \textbf{\translatedby{}}} \\ \fi\fi
