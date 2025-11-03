@@ -57,7 +57,7 @@ def fix_quotation_marks(text: str) -> str:
 def fix_grammar(prompt, client):
 
     message = client.messages.create(
-        model="claude-3-7-sonnet-20250219",
+        model="claude-haiku-4-5-20251001",
         max_tokens=8192,
         temperature=0,
         messages=[{"role": "user", "content": prompt}]

@@ -1,0 +1,54 @@
+\clearpage % Ensures the next content starts on a new page, but avoids an extra blank page
+%\null\par % Alternative to avoid an empty page if needed
+
+{\small
+\setlength{\parindent}{0em}\setlength{\parskip}{1em}
+
+{\large \emcap{\booktitle}}
+
+\ifx\originaltitle\undefined\else\if\relax\detokenize\expandafter{\originaltitle}\relax\else{\emcap{Original Title}: \textbf{\originaltitle{}}} \\ \fi\fi
+\emcap{Authors}: \textbf{\authorname} \\
+\ifx\editor\undefined\else\if\relax\detokenize\expandafter{\editor}\relax\else{\emcap{Editor}: \textbf{\editor{}}} \\ \fi\fi
+\ifx\translatedby\undefined\else\if\relax\detokenize\expandafter{\translatedby}\relax\else{\emcap{Translated by}: \textbf{\translatedby{}}} \\ \fi\fi
+\ifx\publisher\undefined\else\if\relax\detokenize\expandafter{\publisher}\relax\else{\emcap{Publisher}: \textbf{\publisher{}}} \\ \fi\fi
+\ifx\publishingplace\undefined\else\if\relax\detokenize\expandafter{\publishingplace}\relax\else{\emcap{Publishing Place and Year}: \textbf{\publishingplace{}, \publishingyear{}}} \\ \fi\fi
+\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{\emcap{ISBN}: \textbf{\isbn{}}} \\ \fi\fi
+\emcap{Version}: \textbf{3.0.3} | \emcap{RD}: \textbf{20250401} \\
+\ifx\publishingplacefirstedition\undefined\else\if\relax\detokenize\expandafter
+{\publishingplacefirstedition}\relax\else{\emcap{First Edition Published}: \textbf{\publishingplacefirstedition{}, \publishingyearfirstedition{}}} \\ \fi\fi
+\ifx\isbnfirstedition\undefined\else\if\relax\detokenize\expandafter{\isbnfirstedition}\relax\else{\emcap{ISBN (First Edition)}: \textbf{\isbnfirstedition{}}} \\ \fi\fi
+\ifx\poems\undefined\else\if\relax\detokenize\expandafter{\poems}\relax\else{\emcap{Poems}: Courtesy of \textbf{\poems{}}} \\ \fi\fi
+\emcap{Images source}: \textit{Courtesy of the \href{https://ellenwhite.org/}{Ellen G. White Estate, Inc}}
+
+\vfill
+
+% License text
+{\licensesize \licensetext}
+
+\ifepub
+    \includegraphics[width=\linewidth]{images/logo-black.png}
+
+    This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar}{www.forgottenpillar.com}
+\else
+    % Create a row with the logo, text, and QR code
+    \noindent
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/logo-black.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{\dimexpr\linewidth-0.3\textwidth-0.125\textwidth-1em\relax}
+        \raggedleft\footnotesize
+        This book is downloaded for free at \href{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}{www.forgottenpillar.com}
+    \end{minipage}%
+    \ifnum\pdfstrcmp{\currentlayout}{mobile}=0
+    \else
+        \hfill
+        \begin{minipage}{0.125\textwidth}
+            \centering
+            \qrcode{https://forgottenpillar.com/book/the-forgotten-pillar?lang=\currentlang&type=\currentlayout}
+        \end{minipage}
+    \fi%
+\fi
+}
+
+\pagebreak
