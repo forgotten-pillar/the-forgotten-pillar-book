@@ -136,7 +136,7 @@ Input paragraphs:
 Translated paragraphs:"""
 
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-opus-4-1-20250805",
         max_tokens=8192,
         temperature=0,
         system=system_message,

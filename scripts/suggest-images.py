@@ -12,7 +12,7 @@ def read_latex_file(file_path):
     
 def find_suggestions(prompt, client):
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-opus-4-1-20250805",
         max_tokens=8192,
         temperature=0,
         messages=[{"role": "user", "content": prompt}]
